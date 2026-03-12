@@ -3,14 +3,16 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import ParameterGrid, TimeSeriesSplit
 from xgboost import XGBRegressor
 
 DATA_PATH = Path(__file__).resolve().parent / "Data" / "final" / "MasterDataset.csv"
 START_DATE = pd.Timestamp("2021-10-19")
-TEST_FRACTION = 0.20
+TEST_START_DATE = pd.Timestamp("2026-01-14")
 TARGET = "Spread"
 ROLLING_WINDOW = 20
 SEASON_START_MONTH = 9
+CV_FOLDS = 5
 
 FEATURES = [
     "home_indicator",
@@ -35,6 +37,8 @@ REQUIRED_COLUMNS = [
     "AwayTeamId",
     "HomePTS",
     "AwayPTS",
+    "Home_poss",
+    "Away_poss",
     "Home_rest_days",
     "Away_rest_days",
     "Spread",
@@ -51,14 +55,14 @@ REQUIRED_COLUMNS = [
     "Away_TOV_rate",
 ]
 
-# Best single-holdout XGBoost settings from the sweep.
+# Selected XGBoost settings from the broader sweep.
 XGBOOST_PARAMS = {
     "n_estimators": 160,
-    "learning_rate": 0.05,
+    "learning_rate": 0.03,
     "max_depth": 2,
     "min_child_weight": 25,
-    "subsample": 0.65,
-    "colsample_bytree": 0.70,
+    "subsample": 0.55,
+    "colsample_bytree": 0.55,
     "reg_lambda": 10.0,
     "reg_alpha": 2.0,
     "gamma": 1.0,
@@ -66,6 +70,15 @@ XGBOOST_PARAMS = {
     "eval_metric": "mae",
     "random_state": 42,
     "n_jobs": -1,
+}
+
+XGBOOST_GRID = {
+    "n_estimators": [160],
+    "learning_rate": [0.03],
+    "max_depth": [2],
+    "min_child_weight": [25],
+    "subsample": [0.55],
+    "colsample_bytree": [0.55],
 }
 
 
@@ -104,6 +117,9 @@ def build_team_history(df: pd.DataFrame) -> pd.DataFrame:
             "is_home": 1.0,
             "margin": margin,
             "win": (margin > 0).astype(float),
+            "pts_for": home_pts,
+            "pts_against": away_pts,
+            "poss": pd.to_numeric(df["Home_poss"], errors="coerce"),
             "ts": pd.to_numeric(df["Home_TS"], errors="coerce"),
             "three_pa_rate": pd.to_numeric(df["Home_3PA_rate"], errors="coerce"),
             "tov_rate": pd.to_numeric(df["Home_TOV_rate"], errors="coerce"),
@@ -117,6 +133,9 @@ def build_team_history(df: pd.DataFrame) -> pd.DataFrame:
             "is_home": 0.0,
             "margin": -margin,
             "win": (margin < 0).astype(float),
+            "pts_for": away_pts,
+            "pts_against": home_pts,
+            "poss": pd.to_numeric(df["Away_poss"], errors="coerce"),
             "ts": pd.to_numeric(df["Away_TS"], errors="coerce"),
             "three_pa_rate": pd.to_numeric(df["Away_3PA_rate"], errors="coerce"),
             "tov_rate": pd.to_numeric(df["Away_TOV_rate"], errors="coerce"),
@@ -275,9 +294,11 @@ def build_model_frame(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def split_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    split_idx = int(len(df) * (1 - TEST_FRACTION))
-    split_idx = max(1, min(split_idx, len(df) - 1))
-    return df.iloc[:split_idx].copy(), df.iloc[split_idx:].copy()
+    train_df = df[df["gameDate"] < TEST_START_DATE].copy()
+    test_df = df[df["gameDate"] >= TEST_START_DATE].copy()
+    if train_df.empty or test_df.empty:
+        raise ValueError("Date-based split produced an empty train or test set.")
+    return train_df, test_df
 
 
 def prepare_features(X_train: pd.DataFrame, X_test: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -288,9 +309,200 @@ def prepare_features(X_train: pd.DataFrame, X_test: pd.DataFrame) -> tuple[pd.Da
     return X_train, X_test
 
 
+def make_cv_splits(train_df: pd.DataFrame) -> list[tuple[np.ndarray, np.ndarray]]:
+    game_days = train_df["gameDate"].dt.normalize()
+    unique_days = pd.Index(game_days.drop_duplicates().sort_values())
+    splitter = TimeSeriesSplit(n_splits=CV_FOLDS)
+    splits: list[tuple[np.ndarray, np.ndarray]] = []
+
+    for day_train_idx, day_valid_idx in splitter.split(unique_days):
+        train_days = unique_days[day_train_idx]
+        valid_days = unique_days[day_valid_idx]
+        row_train_idx = train_df.index[game_days.isin(train_days)].to_numpy()
+        row_valid_idx = train_df.index[game_days.isin(valid_days)].to_numpy()
+        splits.append((row_train_idx, row_valid_idx))
+
+    return splits
+
+
+def build_history_lookup(history: pd.DataFrame) -> dict[float, pd.DataFrame]:
+    return {
+        team_id: group.reset_index(drop=True)
+        for team_id, group in history.groupby("teamId", sort=False)
+    }
+
+
+def get_team_history(
+    history_by_team: dict[float, pd.DataFrame],
+    team_id: float,
+    game_date: pd.Timestamp,
+    season: int | None = None,
+) -> pd.DataFrame:
+    history = history_by_team.get(team_id)
+    if history is None:
+        return pd.DataFrame()
+
+    past = history[history["gameDate"] < game_date]
+    if season is not None:
+        past = past[past["season"] == season]
+    return past
+
+
+def rolling_team_value(
+    history_by_team: dict[float, pd.DataFrame],
+    team_id: float,
+    game_date: pd.Timestamp,
+    column: str,
+    window: int,
+) -> float:
+    past = get_team_history(history_by_team, team_id, game_date)
+    if len(past) < 3:
+        return np.nan
+    return float(past[column].tail(window).mean())
+
+
+def season_team_values(
+    history_by_team: dict[float, pd.DataFrame],
+    team_id: float,
+    game_date: pd.Timestamp,
+) -> dict[str, float]:
+    season = season_key(pd.Series([game_date])).iloc[0]
+    past = get_team_history(history_by_team, team_id, game_date, season=season)
+    if past.empty:
+        return {
+            "winpct": np.nan,
+            "home_split_margin": np.nan,
+            "road_split_margin": np.nan,
+            "net_rating": np.nan,
+            "def_rating": np.nan,
+        }
+
+    rating_rows = past[["pts_for", "pts_against", "poss"]].dropna()
+    poss_sum = rating_rows["poss"].sum()
+    if poss_sum > 0:
+        net_rating = 100.0 * (rating_rows["pts_for"].sum() - rating_rows["pts_against"].sum()) / poss_sum
+        def_rating = 100.0 * rating_rows["pts_against"].sum() / poss_sum
+    else:
+        net_rating = np.nan
+        def_rating = np.nan
+
+    return {
+        "winpct": float(past["win"].mean()),
+        "home_split_margin": float(past.loc[past["is_home"] == 1.0, "margin"].mean()),
+        "road_split_margin": float(past.loc[past["is_home"] == 0.0, "margin"].mean()),
+        "net_rating": float(net_rating),
+        "def_rating": float(def_rating),
+    }
+
+
+def h2h_margin_from_history(
+    history_df: pd.DataFrame,
+    home_team_id: float,
+    away_team_id: float,
+    game_date: pd.Timestamp,
+) -> float:
+    pair_games = history_df[
+        (
+            ((history_df["HomeTeamId"] == home_team_id) & (history_df["AwayTeamId"] == away_team_id))
+            | ((history_df["HomeTeamId"] == away_team_id) & (history_df["AwayTeamId"] == home_team_id))
+        )
+        & (history_df["gameDate"] < game_date)
+    ].sort_values("gameDate")
+    if pair_games.empty:
+        return np.nan
+
+    spreads = pd.to_numeric(pair_games.tail(5)[TARGET], errors="coerce")
+    oriented = np.where(pair_games.tail(5)["HomeTeamId"] == home_team_id, spreads, -spreads)
+    return float(np.nanmean(oriented))
+
+
+def build_snapshot_test_frame(history_source: pd.DataFrame, test_source: pd.DataFrame) -> pd.DataFrame:
+    history = build_team_history(history_source)
+    history_by_team = build_history_lookup(history)
+    rows: list[dict[str, float | pd.Timestamp]] = []
+
+    for row in test_source.itertuples(index=False):
+        home_team_id = float(row.HomeTeamId)
+        away_team_id = float(row.AwayTeamId)
+        game_date = pd.Timestamp(row.gameDate)
+        home_season = season_team_values(history_by_team, home_team_id, game_date)
+        away_season = season_team_values(history_by_team, away_team_id, game_date)
+
+        rows.append(
+            {
+                "gameDate": game_date,
+                "home_indicator": 1.0,
+                "diff_last10_margin": rolling_team_value(history_by_team, home_team_id, game_date, "margin", 10)
+                - rolling_team_value(history_by_team, away_team_id, game_date, "margin", 10),
+                "netrating_diff": home_season["net_rating"] - away_season["net_rating"],
+                "split_margin_diff_calc": home_season["home_split_margin"] - away_season["road_split_margin"],
+                "away_rest_days_capped": float(np.clip(pd.to_numeric(row.Away_rest_days, errors="coerce"), 0, 4)),
+                "home_rest_days_capped": float(np.clip(pd.to_numeric(row.Home_rest_days, errors="coerce"), 0, 4)),
+                "diff_roll20_tov_rate": rolling_team_value(history_by_team, home_team_id, game_date, "tov_rate", 20)
+                - rolling_team_value(history_by_team, away_team_id, game_date, "tov_rate", 20),
+                "Home_b2b": float(pd.to_numeric(row.Home_b2b, errors="coerce")),
+                "defRating_diff": home_season["def_rating"] - away_season["def_rating"],
+                "winpct_diff_calc": home_season["winpct"] - away_season["winpct"],
+                "diff_roll20_ts": rolling_team_value(history_by_team, home_team_id, game_date, "ts", 20)
+                - rolling_team_value(history_by_team, away_team_id, game_date, "ts", 20),
+                "diff_roll20_3pa_rate": rolling_team_value(history_by_team, home_team_id, game_date, "three_pa_rate", 20)
+                - rolling_team_value(history_by_team, away_team_id, game_date, "three_pa_rate", 20),
+                "h2h_margin_for_home": h2h_margin_from_history(history_source, home_team_id, away_team_id, game_date),
+                "Away_b2b": float(pd.to_numeric(row.Away_b2b, errors="coerce")),
+                TARGET: float(pd.to_numeric(row.Spread, errors="coerce")),
+            }
+        )
+
+    model_df = pd.DataFrame(rows)
+    model_df = model_df.replace([np.inf, -np.inf], np.nan)
+    return model_df.dropna(subset=[TARGET]).reset_index(drop=True)
+
+
+def cv_mae_for_params(train_df: pd.DataFrame, params: dict[str, float | int]) -> list[float]:
+    fold_maes: list[float] = []
+
+    for row_train_idx, row_valid_idx in make_cv_splits(train_df):
+        fold_train = train_df.loc[row_train_idx]
+        fold_valid = train_df.loc[row_valid_idx]
+
+        X_fold_train = fold_train[FEATURES].copy()
+        X_fold_valid = fold_valid[FEATURES].copy()
+        y_fold_train = fold_train[TARGET].copy()
+        y_fold_valid = fold_valid[TARGET].copy()
+
+        X_fold_train, X_fold_valid = prepare_features(X_fold_train, X_fold_valid)
+        model = XGBRegressor(**(XGBOOST_PARAMS | params))
+        model.fit(X_fold_train, y_fold_train)
+        fold_pred = model.predict(X_fold_valid)
+        fold_maes.append(mean_absolute_error(y_fold_valid, fold_pred))
+
+    return fold_maes
+
+
+def tune_xgboost(train_df: pd.DataFrame) -> tuple[dict[str, float | int], list[float], float]:
+    best_params = XGBOOST_PARAMS.copy()
+    best_fold_maes: list[float] = []
+    best_cv_mae = float("inf")
+
+    for params in ParameterGrid(XGBOOST_GRID):
+        fold_maes = cv_mae_for_params(train_df, params)
+        cv_mae = float(np.mean(fold_maes))
+        if cv_mae < best_cv_mae:
+            best_params = XGBOOST_PARAMS | params
+            best_fold_maes = fold_maes
+            best_cv_mae = cv_mae
+
+    return best_params, best_fold_maes, best_cv_mae
+
+
 def main() -> None:
-    model_df = build_model_frame(load_data())
-    train_df, test_df = split_data(model_df)
+    raw_df = load_data()
+    raw_train_df, raw_test_df = split_data(raw_df)
+    train_df = build_model_frame(raw_train_df)
+    test_df = build_snapshot_test_frame(raw_train_df, raw_test_df)
+    model_df = pd.concat([train_df, test_df], ignore_index=True)
+
+    best_params, fold_maes, cv_mae = tune_xgboost(train_df)
 
     X_train = train_df[FEATURES].copy()
     X_test = test_df[FEATURES].copy()
@@ -298,7 +510,7 @@ def main() -> None:
     y_test = test_df[TARGET].copy()
 
     X_train, X_test = prepare_features(X_train, X_test)
-    model = XGBRegressor(**XGBOOST_PARAMS)
+    model = XGBRegressor(**best_params)
     model.fit(X_train, y_train)
 
     train_mae = mean_absolute_error(y_train, model.predict(X_train))
@@ -307,11 +519,17 @@ def main() -> None:
 
     print(f"Rows: {len(model_df)}  |  {model_df['gameDate'].min()} -> {model_df['gameDate'].max()}")
     print(f"Start date filter: {START_DATE.date()}")
-    print(f"Chronological split: {len(train_df)} train / {len(test_df)} test")
-    print(f"Train end: {train_df['gameDate'].iloc[-1]}")
-    print(f"Test start: {test_df['gameDate'].iloc[0]}")
+    print(f"Date-based split: {len(train_df)} train / {len(test_df)} test")
+    print(f"Train end: {raw_train_df['gameDate'].iloc[-1]}")
+    print(f"Test start: {raw_test_df['gameDate'].iloc[0]}")
+    print(f"Held-out test window: {TEST_START_DATE.date()} -> {model_df['gameDate'].max().date()}")
+    print("Held-out test features frozen to information available before 2026-01-14")
+    print(f"5-fold time-series CV on the pre-{TEST_START_DATE.date()} training block")
     print(f"Rolling window: {ROLLING_WINDOW}")
     print()
+    print(f"Best params: {best_params}")
+    print(f"Fold MAE: {[round(mae, 4) for mae in fold_maes]}")
+    print(f"CV MAE: {cv_mae:.4f}")
     print(f"Train MAE: {train_mae:.4f}")
     print(f"Test MAE: {test_mae:.4f}")
     print()
