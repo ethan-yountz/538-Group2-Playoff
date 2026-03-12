@@ -42,8 +42,6 @@ REQUIRED_COLUMNS = [
     "Home_rest_days",
     "Away_rest_days",
     "Spread",
-    "netRating_diff",
-    "defRating_diff",
     "diff_last10_margin",
     "Home_b2b",
     "Away_b2b",
@@ -152,6 +150,12 @@ def add_season_features(df: pd.DataFrame, history: pd.DataFrame) -> pd.DataFrame
 
     prior_games = grouped.cumcount().astype(float)
     season_df["winpct_calc"] = (grouped["win"].cumsum() - season_df["win"]) / prior_games.replace(0.0, np.nan)
+    prior_pts_for = grouped["pts_for"].cumsum() - season_df["pts_for"]
+    prior_pts_against = grouped["pts_against"].cumsum() - season_df["pts_against"]
+    prior_poss = grouped["poss"].cumsum() - season_df["poss"]
+    season_df["off_rating_calc"] = 100.0 * prior_pts_for / prior_poss.replace(0.0, np.nan)
+    season_df["def_rating_calc"] = 100.0 * prior_pts_against / prior_poss.replace(0.0, np.nan)
+    season_df["net_rating_calc"] = season_df["off_rating_calc"] - season_df["def_rating_calc"]
 
     season_df["home_game"] = season_df["is_home"]
     season_df["road_game"] = 1.0 - season_df["is_home"]
@@ -168,21 +172,45 @@ def add_season_features(df: pd.DataFrame, history: pd.DataFrame) -> pd.DataFrame
 
     home_stats = season_df.loc[
         season_df["is_home"] == 1.0,
-        ["gameDate", "season", "teamId", "winpct_calc", "home_split_margin_calc"],
+        [
+            "gameDate",
+            "season",
+            "teamId",
+            "winpct_calc",
+            "home_split_margin_calc",
+            "off_rating_calc",
+            "def_rating_calc",
+            "net_rating_calc",
+        ],
     ].rename(
         columns={
             "teamId": "HomeTeamId",
             "winpct_calc": "home_winpct_calc",
+            "off_rating_calc": "home_off_rating_calc",
+            "def_rating_calc": "home_def_rating_calc",
+            "net_rating_calc": "home_net_rating_calc",
         }
     )
     away_stats = season_df.loc[
         season_df["is_home"] == 0.0,
-        ["gameDate", "season", "teamId", "winpct_calc", "road_split_margin_calc"],
+        [
+            "gameDate",
+            "season",
+            "teamId",
+            "winpct_calc",
+            "road_split_margin_calc",
+            "off_rating_calc",
+            "def_rating_calc",
+            "net_rating_calc",
+        ],
     ].rename(
         columns={
             "teamId": "AwayTeamId",
             "winpct_calc": "away_winpct_calc",
             "road_split_margin_calc": "away_road_split_margin_calc",
+            "off_rating_calc": "away_off_rating_calc",
+            "def_rating_calc": "away_def_rating_calc",
+            "net_rating_calc": "away_net_rating_calc",
         }
     )
 
@@ -190,6 +218,9 @@ def add_season_features(df: pd.DataFrame, history: pd.DataFrame) -> pd.DataFrame
     merged = merged.merge(away_stats, on=["gameDate", "season", "AwayTeamId"], how="left")
     merged["winpct_diff_calc"] = merged["home_winpct_calc"] - merged["away_winpct_calc"]
     merged["split_margin_diff_calc"] = merged["home_split_margin_calc"] - merged["away_road_split_margin_calc"]
+    merged["offRating_diff"] = merged["home_off_rating_calc"] - merged["away_off_rating_calc"]
+    merged["defRating_diff"] = merged["home_def_rating_calc"] - merged["away_def_rating_calc"]
+    merged["netRating_diff"] = merged["home_net_rating_calc"] - merged["away_net_rating_calc"]
     return merged
 
 

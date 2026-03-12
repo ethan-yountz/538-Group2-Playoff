@@ -65,7 +65,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 196294581,Eidan,Alber,,,,,,,,,,,
 1966938138,Augusto,Alcassa,,,,,,,,,,,
 76020,Gary,Alcorn,,Fresno State,USA,81,225,0,0,1,1959,3,16
-1630583,Santi,Aldama,,,,,,false,false,false,,,
+1630583,Santi,Aldama,,,,,,,,,,,
 203128,Furkan,Aldemir,,Galatasaray,Turkey,82,240,0,1,1,2012,2,53
 202332,Cole,Aldrich,,Kansas,USA,83,253,0,0,1,2010,1,11
 200746,LaMarcus,Aldridge,,University of Texas at Austin,USA,83,250,0,1,1,2006,1,2
@@ -87,7 +87,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76024,Steve,Alford,,Indiana,USA,74,183,1,0,0,1987,2,26
 1628959,Rawle,Alkins,,Arizona,USA,77,225,1,0,0,-1,-1,-1
 76028,Bob,Allen,,Marshall,USA,81,205,0,1,0,1968,6,71
-1628960,Grayson,Allen,,,,,,false,false,false,,,
+1628960,Grayson,Allen,,,,,,,,,,,
 1628386,Jarrett,Allen,,,,,,false,false,false,,,
 43229,Jeff,Allen,,,,,,0,0,0,,,
 706,Jerome,Allen,,Pennsylvania,USA,76,184,1,0,0,1995,2,49
@@ -143,7 +143,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 72,Kenny,Anderson,,Georgia Tech,USA,73,168,1,0,0,1991,1,2
 203198,Kevin,Anderson,,,,,,,,,,,
 76041,Kim,Anderson,,Missouri,USA,79,200,0,1,0,1978,7,146
-203937,Kyle,Anderson,,,,,,false,false,false,,,
+203937,Kyle,Anderson,,,,,,,,,,,
 196294559,Lachlan,Anderson,,,,,,,,,,,
 76042,Michael,Anderson,,Drexel,USA,71,184,1,0,0,1988,3,73
 76043,Mitchell,Anderson,,Bradley,USA,80,195,0,1,0,1982,2,36
@@ -165,7 +165,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 41005,Michailas,Anisimovas,,,,,,,,,,,
 76050,Michael,Ansley,,Alabama,USA,79,225,0,1,0,1989,2,37
 1512,Chris,Anstey,,South East Melbourne,Australia,84,249,0,0,1,1997,1,18
-203507,Giannis,Antetokounmpo,,,,,,,,,,,
+203507,Giannis,Antetokounmpo,,,,,,false,false,false,,,
 1628961,Kostas,Antetokounmpo,,Dayton,Greece,82,200,0,1,0,2018,2,60
 203648,Thanasis,Antetokounmpo,,,,,,,,,,,
 2546,Carmelo,Anthony,,Syracuse,USA,79,238,0,1,0,2003,1,3
@@ -293,7 +293,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76091,Greg,Ballard,,Oregon,USA,79,215,0,1,0,1977,1,4
 1630642,Mitch,Ballock,,,USA,,,0,0,0,-22,-22,-22
 76092,Herschel,Baltimore,,Penn State,USA,76,195,0,1,0,-1,-1,-1
-1628964,Mo,Bamba,,Texas,USA,84,231,0,0,1,2018,1,6
+1628964,Mo,Bamba,,,,,,,,,,,
 1631094,Paolo,Banchero,,,,,,false,false,false,,,
 1630217,Desmond,Bane,,,,,,false,false,false,,,
 43200,Marko,Banic,,,,,,,,,,,
@@ -509,7 +509,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76172,Uwe,Blab,,Indiana,USA,85,252,0,0,1,1985,1,17
 1641710,Anthony,Black,,,,,,false,false,false,,,
 76173,Charlie,Black,,Kansas,USA,76,200,0,1,0,-1,-1,-1
-1641778,Leaky,Black,,North Carolina,USA,78,209,0,1,0,,,
+1641778,Leaky,Black,,,,,,false,false,false,,,
 76174,Norman,Black,,St. Joseph's (PA),USA,77,185,1,0,0,-1,-1,-1
 204028,Tarik,Black,,Kansas,USA,81,250,0,1,1,-1,-1,-1
 76175,Tom,Black,,South Dakota State,USA,82,220,0,0,1,1964,9,72
@@ -578,7 +578,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1627762,Joel,Bolomboy,,Weber State,Ukraine,81,235,0,0,0,2016,2,52
 76197,Doug,Bolstorff,,Minnesota,USA,76,195,1,0,0,1957,8,57
 76203,George H.,Bon Salle,,Illinois,USA,80,220,0,1,0,1957,1,7
-1641737,Adem,Bona,,,,,,,,,,,
+1641737,Adem,Bona,,,,,,false,false,false,,,
 76198,Phil,Bond,,Louisville,USA,74,175,1,0,0,1977,3,62
 1629260,Tim,Bond,,,,,,,,,,,
 1603,Walter,Bond,,Minnesota,USA,77,200,1,0,0,-1,-1,-1
@@ -699,7 +699,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76253,Bill,Bridges,,Kansas,USA,77,228,0,1,0,1961,3,32
 1641779,Jalen,Bridges,,Baylor,USA,80,225,0,1,0,,,
 1628969,Mikal,Bridges,,,,,,false,false,false,,,
-1628970,Miles,Bridges,,,,,,,,,,,
+1628970,Miles,Bridges,,,,,,false,false,false,,,
 76254,Al,Brightman,,University of Charleston,USA,74,195,0,1,0,-1,-1,-1
 1628578,Amida,Brimah,,Connecticut,USA,82,230,0,0,1,-1,-1,-1
 1962937826,Amida,Brimah,,,,,,,,,,,
@@ -722,7 +722,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76264,Price,Brookfield,,West Texas A&M,USA,76,185,0,1,0,-1,-1,-1
 201166,Aaron,Brooks,,Oregon,USA,72,161,1,0,0,2007,1,26
 1629717,Armoni,Brooks,,Houston,USA,75,195,1,0,0,2019,,
-1628415,Dillon,Brooks,,,,,,,,,,,
+1628415,Dillon,Brooks,,,,,,false,false,false,,,
 1631365,Garrison,Brooks,,,,,,,,,,,
 76265,Kevin,Brooks,,Louisiana-Lafayette,USA,78,200,0,1,0,1991,1,18
 202705,MarShon,Brooks,,Providence,USA,77,200,1,0,0,2011,1,25
@@ -942,7 +942,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1628974,Tony,Carr,,,USA,,,0,0,0,2018,2,51
 56063,Marco,Carraretto,,,,,,,,,,,
 76352,Bob,Carrington,,Boston College,USA,78,195,1,0,0,1976,2,28
-1642267,Bub,Carrington,,,,,,false,false,false,,,
+1642267,Bub,Carrington,,,,,,,,,,,
 201960,DeMarre,Carroll,,Missouri,USA,78,215,0,1,0,2009,1,27
 56055,Jaycee,Carroll,,,,,,,,,,,
 1629050,Jeffrey,Carroll,,,,,,,,,,,
@@ -978,7 +978,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 551,Omri,Casspi,,,,,,,,,,,
 1642264,Stephon,Castle,,,,,,false,false,false,,,
 101255,Steve,Castleberry,,,,,,,,,,,
-1630658,Colin,Castleton,,Florida,USA,82,250,0,0,1,,,
+1630658,Colin,Castleton,,,,,,,,,,,
 76365,Harvey,Catchings,,Hardin-Simmons,USA,81,218,0,0,1,1974,3,42
 767,Terry,Catledge,,South Alabama,USA,80,220,0,1,0,1985,1,21
 76367,Sid,Catlett,,Notre Dame,USA,78,230,0,1,0,1971,4,55
@@ -1063,7 +1063,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 538,Cinciarini,Cinciarini,,,,,,,,,,,
 1966938134,Lucas,Cipolini,,,,,,,,,,,
 1630619,Moussa,Cisse,,,,,,,,,,,
-1631321,Sidy,Cissoko,,,,,,false,false,false,,,
+1631321,Sidy,Cissoko,,,,,,,,,,,
 2439,Sam,Clancy,,,,,,,,,,,
 76397,Archie,Clark,,Minnesota,USA,74,175,1,0,0,1966,4,37
 76398,Carlos,Clark,,Mississippi,USA,76,210,1,0,0,1983,4,91
@@ -1090,7 +1090,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1628499,Antonius,Cleveland,,S.E. Missouri,USA,77,195,1,0,0,-22,-22,-22
 196294102,Antonius,Cleveland,,,,,,0,0,0,,,
 1642888,Matthew,Cleveland,,,,,,,,,,,
-1642363,Nique,Clifford,,,,,,,,,,,
+1642363,Nique,Clifford,,,,,,false,false,false,,,
 76404,Nat,Clifton,,Xavier of Louisiana,USA,78,220,0,0,1,-1,-1,-1
 1642270,Donovan,Clingan,,,,,,false,false,false,,,
 76406,Bill,Closs,,Rice,USA,78,195,0,1,0,-1,-1,-1
@@ -1147,7 +1147,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76427,Larry,Comley,,Kansas State,USA,77,210,1,0,0,1961,10,91
 1642022,George,Conditt IV,,,Puerto Rico,,,0,0,0,-22,-22,-22
 76428,Gene,Conley,,Washington State,USA,80,225,0,0,1,1952,10,
-201144,Mike,Conley,,Ohio State,USA,72,175,1,0,0,2007,1,4
+201144,Mike,Conley,,,,,,,,,,,
 76429,Ed,Conlin,,Fordham,USA,78,200,0,1,0,1955,1,5
 55,Marty,Conlon,,Providence,USA,83,245,0,0,1,-1,-1,-1
 1626192,Pat,Connaughton,,,,,,,,,,,
@@ -1209,7 +1209,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1627902,Jaleel,Cousins,,,,,,,,,,,
 600003,Bob,Cousy,,Holy Cross,USA,73,175,1,0,0,1950,1,3
 203496,Robert,Covington,,Tennessee State,USA,79,209,0,1,0,-1,-1,-1
-1642907,Cedric,Coward,,,,,,false,false,false,,,
+1642907,Cedric,Coward,,,,,,,,,,,
 76462,Dave,Cowens,,Florida State,USA,81,230,0,0,1,1970,1,4
 76463,John,Cox,,San Francisco,USA,74,180,1,0,0,1978,8,159
 76464,Johnny,Cox,,Kentucky,USA,76,180,1,0,0,1959,4,28
@@ -1248,7 +1248,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76482,Corey,Crowder,,Kentucky Wesleyan,USA,77,214,0,1,0,-1,-1,-1
 203109,Jae,Crowder,,Marquette,USA,78,235,0,1,0,2012,2,34
 1630622,Jalen,Crutcher,,Dayton,USA,73,175,1,0,0,,,
-1643018,LJ,Cryer,,Houston,USA,72,,1,0,0,,,
+1643018,LJ,Cryer,,,,,,,,,,,
 42565,David,Cubillan,,,,,,,,,,,
 196294614,Martin,Cuello,,,,,,,,,,,
 1629633,Jarrett,Culver,,Texas Tech,USA,78,195,1,1,0,2019,1,6
@@ -1274,7 +1274,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 2201,Eddy,Curry,,Thornwood HS (IL),USA,84,295,0,0,1,2001,1,4
 201191,JamesOn,Curry,,Oklahoma State,USA,75,190,1,0,0,2007,2,51
 688,Michael,Curry,,Georgia Southern,USA,77,210,1,1,0,-1,-1,-1
-203552,Seth,Curry,,Duke,USA,73,185,1,0,0,,,
+203552,Seth,Curry,,,,,,,,,,,
 201939,Stephen,Curry,,,,,,,,,,,
 687,Rastko,Cvetkovic,,Crvena zvezda,Serbia,85,260,0,0,1,-1,-1,-1
 203589,Olek,Czyz,,,,,,,,,,,
@@ -1440,7 +1440,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1631238,Michael,Devoe,,,USA,,,0,0,0,-22,-22,-22
 76568,Ernie,DiGregorio,,Providence,USA,72,180,1,0,0,1973,1,3
 1628978,Donte,DiVincenzo,,,,,,false,false,false,,,
-1631217,Moussa,Diabate,,,,,,,,,,,
+1631217,Moussa,Diabate,,,,,,false,false,false,,,
 512,Vladimir,Diachok,,,,,,,,,,,
 196294532,Ismaila,Diagne,,,,,,,,,,,
 502,Diakite,Diakite,,,,,,,,,,,
@@ -1552,7 +1552,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 64071,Anthony,Drmic,,,,,,,,,,,
 1542,Predrag,Drobnjak,,Efes Pilsen,Serbia,83,270,0,0,1,1997,2,48
 76604,Ralph,Drollinger,,UCLA,USA,86,250,0,0,1,1978,5,105
-203083,Andre,Drummond,,,,,,false,false,false,,,
+203083,Andre,Drummond,,,,,,,,,,,
 2271,Robb,Dryden,,,,,,,,,,,
 76623,Dennis,DuVal,,Syracuse,USA,75,175,1,0,0,1974,2,30
 64122,Hongrui,Duan,,,,,,,,,,,
@@ -1587,7 +1587,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 2859,Jerry,Dupree,,,,,,,,,,,
 2648,Ronald,Dupree,,Louisiana State,USA,79,209,0,0,0,-22,-22,-22
 201142,Kevin,Durant,,,,,,false,false,false,,,
-1631105,Jalen,Duren,,,,,,,,,,,
+1631105,Jalen,Duren,,,,,,false,false,false,,,
 76619,John,Duren,,Georgetown,USA,75,195,1,0,0,1980,1,19
 1090,Pat,Durham,,Colorado State,USA,79,210,0,1,0,1989,2,35
 76621,Devin,Durrant,,Brigham Young,USA,79,200,0,1,0,1984,2,25
@@ -1683,7 +1683,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76667,Darrell,Elston,,North Carolina,USA,75,190,1,0,0,1974,3,43
 2408,Melvin,Ely,,Fresno State,USA,82,260,0,1,1,2002,1,12
 552,Elyahu,Elyahu,,,,,,,,,,,
-203954,Joel,Embiid,,,,,,,,,,,
+203954,Joel,Embiid,,,,,,false,false,false,,,
 76668,Wayne,Embry,,Miami (Ohio),USA,80,240,0,0,1,1958,3,22
 2765,Andre,Emmett,,Texas Tech,USA,77,230,1,0,0,2004,2,35
 1642400,Tristan,Enaruna,,,,,,,,,,,
@@ -1718,7 +1718,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1642855,Noa,Essengue,,-,France,80,194,0,1,0,2025,1,12
 196295093,Noa,Essengue,,,,,,0,0,0,,,
 1642401,Aaron,Estrada,,,USA,,,0,0,0,-22,-22,-22
-1630623,Tyson,Etienne,,Wichita State,USA,72,200,1,0,0,,,
+1630623,Tyson,Etienne,,,,,,,,,,,
 1629234,Drew,Eubanks,,,,,,,,,,,
 76687,Bob,Evans,,Butler,USA,74,175,1,0,0,1949,4,
 967,Brian,Evans,,Indiana,USA,80,220,0,0,0,1996,1,27
@@ -1846,7 +1846,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76729,Jack,Foley,,Holy Cross,USA,75,170,0,1,0,1962,2,16
 1829,Ike,Fontaine,,Washington State,USA,,,0,0,0,-1,-1,-1
 76731,Levi,Fontaine,,Maryland-Eastern Shore,USA,76,190,1,0,0,1970,5,70
-1631323,Simone,Fontecchio,,,,,,false,false,false,,,
+1631323,Simone,Fontecchio,,,,,,,,,,,
 202880,Jeff,Foote,,Cornell,USA,84,265,0,1,1,-1,-1,-1
 1627854,Bryn,Forbes,,Michigan State,USA,74,205,1,0,0,-1,-1,-1
 201814,Gary,Forbes,,Massachusetts,Panama,79,220,0,1,0,-1,-1,-1
@@ -1939,7 +1939,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1641847,Andrew,Funk,,Penn State,USA,77,200,0,0,0,-22,-22,-22
 1641917,Taylor,Funk,,,USA,,,0,0,0,-22,-22,-22
 76767,Terry,Furlow,,Michigan State,USA,77,190,1,0,0,1976,1,12
-1642277,Johnny,Furphy,,,,,,false,false,false,,,
+1642277,Johnny,Furphy,,,,,,,,,,,
 40031,Roberto,Gabini,,,,,,,,,,,
 76768,Billy,Gabor,,Syracuse,USA,71,170,1,0,0,1948,,
 40061,German,Gabriel,,,,,,,,,,,
@@ -1984,7 +1984,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76779,Vern,Gardner,,Utah,USA,77,200,0,0,1,1949,1,5
 76780,Jack,Garfinkel,,St. John's (NY),USA,72,190,1,0,0,-1,-1,-1
 1627868,Patricio,Garino,,George Washington,Argentina,78,203,1,1,0,-1,-1,-1
-1629636,Darius,Garland,,Vanderbilt,USA,73,192,1,0,0,2019,1,5
+1629636,Darius,Garland,,,,,,false,false,false,,,
 76781,Gary,Garland,,DePaul,USA,76,180,1,0,0,1979,2,30
 76782,Winston,Garland,,Missouri State,USA,74,170,1,0,0,1987,2,40
 1962937739,Tom,Garlepp,,,,,,,,,,,
@@ -2028,7 +2028,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1904,Devean,George,,Augsburg,USA,80,235,0,1,0,1999,1,23
 76800,Jack,George,,La Salle,USA,75,190,1,0,0,1953,,
 1641718,Keyonte,George,,,,,,false,false,false,,,
-1642273,Kyshawn,George,,,,,,false,false,false,,,
+1642273,Kyshawn,George,,,,,,,,,,,
 101239,Otis,George,,,,,,,,,,,
 202331,Paul,George,,,,,,,,,,,
 76801,Tate,George,,Connecticut,USA,77,190,1,0,0,1990,1,22
@@ -2058,7 +2058,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 201821,Trey,Gilder,,Northwestern State,USA,81,205,0,0,0,-22,-22,-22
 201636,CJ,Giles,,,,,,,,,,,
 1628385,Harry,Giles III,,Duke,USA,82,240,0,1,1,2017,1,20
-1628983,Shai,Gilgeous-Alexander,,,,,,,,,,,
+1628983,Shai,Gilgeous-Alexander,,,,,,false,false,false,,,
 1630264,Anthony,Gill,,,,,,,,,,,
 2109,Eddie,Gill,,Weber State,USA,72,190,1,0,0,-1,-1,-1
 383,Kendall,Gill,,Illinois,USA,77,216,1,0,0,1990,1,5
@@ -2115,7 +2115,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1641863,Dane,Goodwin,,,USA,,,0,0,0,-22,-22,-22
 1630692,Jordan,Goodwin,,,,,,,,,,,
 76833,Wilfred,Goodwin,,St John's Prep HS (NY),USA,74,203,0,1,0,-1,-1,-1
-203932,Aaron,Gordon,,Arizona,USA,80,235,0,0,0,2014,1,4
+203932,Aaron,Gordon,,,,,,false,false,false,,,
 2732,Ben,Gordon,,Connecticut,USA,75,205,1,0,0,2004,1,3
 204079,Drew,Gordon,,New Mexico,USA,81,245,0,1,1,-1,-1,-1
 201569,Eric,Gordon,,Indiana,USA,75,215,1,0,0,2008,1,7
@@ -2238,7 +2238,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 561,Grimau,Grimau,,,,,,,,,,,
 42561,Roger,Grimau,,,,,,,,,,,
 8003,Roger,Grimau,,,,,,,,,,,
-1629656,Quentin,Grimes,,,,,,,,,,,
+1629656,Quentin,Grimes,,,,,,false,false,false,,,
 1575,Derek,Grimm,,Missouri,USA,81,230,0,1,0,-1,-1,-1
 76893,George,Grimshaw,,Brown,USA,73,185,1,0,0,-1,-1,-1
 76894,Dick,Groat,,Duke,USA,71,180,1,0,0,1952,1,3
@@ -2296,7 +2296,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 76919,Harvey,Halbrook,,Oregon State,USA,87,235,0,0,1,-22,-22,-22
 76920,Bruce,Hale,,Santa Clara,USA,73,170,1,0,0,-1,-1,-1
 917,Jack,Haley,,UCLA,USA,82,242,0,1,0,1987,4,79
-1630169,Tyrese,Haliburton,,Iowa State,USA,77,185,0,0,0,2020,1,12
+1630169,Tyrese,Haliburton,,,,,,,,,,,
 76922,Shaler,Halimon,,Utah State,USA,77,199,1,0,0,1968,1,14
 1628985,Devon,Hall,,Virginia,USA,77,215,1,0,0,2018,2,53
 1629743,Donta,Hall,,Alabama,USA,81,229,0,0,1,-1,-1,-1
@@ -2459,8 +2459,8 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 101236,Chuck,Hayes,,Kentucky,USA,78,240,0,1,1,-1,-1,-1
 76979,Elvin,Hayes,,Houston,USA,81,235,0,1,0,1968,1,1
 2553,Jarvis,Hayes,,Georgia,USA,80,228,0,1,0,2003,1,10
-1629637,Jaxson,Hayes,,,,,,false,false,false,,,
-1630165,Killian,Hayes,,Ratiopharm Ulm,France,77,195,1,0,0,2020,1,7
+1629637,Jaxson,Hayes,,,,,,,,,,,
+1630165,Killian,Hayes,,,,,,,,,,,
 76980,Steve,Hayes,,Idaho State,USA,84,205,0,0,1,1977,4,76
 1628502,Nigel,Hayes-Davis,,Wisconsin,USA,79,254,0,1,0,,,
 43182,Marquez,Haynes,,,,,,0,0,0,,,
@@ -2528,7 +2528,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 61,Carl,Herrera,,Houston,USA,81,225,0,1,0,1990,2,30
 200835,Walter,Herrmann,,Malaga,Argentina,81,225,0,1,0,-1,-1,-1
 43210,Walter,Herrmann,,,,,,0,0,0,,,
-1629639,Tyler,Herro,,Kentucky,USA,77,195,1,0,0,2019,1,13
+1629639,Tyler,Herro,,,,,,false,false,false,,,
 77010,Keith,Herron,,Villanova,USA,78,195,1,0,0,1978,2,24
 578,Baris,Hersek,,,,,,,,,,,
 77011,Sidney,Hertzberg,,City College of New York,USA,70,175,1,0,0,-1,-1,-1
@@ -2559,7 +2559,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 925,Sean,Higgins,,Michigan,USA,81,215,0,1,0,1990,2,54
 77021,Kenny,Higgs,,Louisiana State,USA,72,180,1,0,0,-1,-1,-1
 77022,Johnny,High,,Nevada,USA,75,185,1,0,0,1979,2,24
-1629312,Haywood,Highsmith,,Wheeling Jesuit ,USA,77,220,0,1,0,2018,,
+1629312,Haywood,Highsmith,,,,,,,,,,,
 77023,Wayne,Hightower,,Kansas,USA,80,192,0,1,0,1962,1,5
 2403,Nene,Hilario,,Vasco de Gama,Brazil,83,250,0,0,0,2002,1,7
 1629759,Ahmed,Hill,,,,,,,,,,,
@@ -2621,7 +2621,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1626182,Jonathan,Holmes,,,,,,,,,,,
 1626158,Richaun,Holmes,,Bowling Green,USA,81,235,0,0,1,2015,2,37
 1641747,DaRon,Holmes II,,,,,,,,,,,
-1631096,Chet,Holmgren,,,,,,,,,,,
+1631096,Chet,Holmgren,,,,,,false,false,false,,,
 77045,Jim,Holstein,,Cincinnati,USA,75,180,0,1,0,1952,,
 77046,Alvin,Holt,,Jackson State,USA,79,210,0,1,0,-22,-22,-22
 1962937808,Stephen,Holt,,,,,,0,0,0,,,
@@ -2650,7 +2650,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 203816,Scotty,Hopson,,Tennessee,USA,79,204,1,1,0,2011,0,0
 77055,Johnny,Horan,,Dayton,USA,80,190,0,1,0,1955,1,6
 77056,Cedrick,Hordges,,South Carolina,USA,80,220,0,0,1,1979,3,49
-201143,Al,Horford,,,,,,,,,,,
+201143,Al,Horford,,,,,,false,false,false,,,
 1626281,Jon,Horford,,,,,,,,,,,
 77057,Tito,Horford,,Miami,USA,85,245,0,0,1,1988,2,39
 77058,Ron,Horn,,Indiana,USA,79,220,0,1,0,1961,2,16
@@ -2665,7 +2665,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77062,Bob,Houbregs,,Washington,USA,80,210,0,0,1,1953,1,2
 2067,Eddie,House,,Arizona State,USA,73,190,1,0,0,2000,2,37
 1627863,Danuel,House Jr.,,Texas A&M,USA,78,220,1,1,0,-1,-1,-1
-1631216,Caleb,Houstan,,Michigan,Canada,80,205,1,0,0,2022,2,32
+1631216,Caleb,Houstan,,,,,,,,,,,
 275,Allan,Houston,,Tennessee,USA,78,200,1,0,0,1993,1,11
 780,Byron,Houston,,Oklahoma State,USA,77,250,0,1,0,1992,1,27
 77064,Tom,Hovasse,,Penn State,USA,80,205,0,1,0,-1,-1,-1
@@ -2742,7 +2742,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77092,Marc,Iavaroni,,Virginia,USA,82,210,0,1,0,1978,3,55
 201586,Serge,Ibaka,,Ricoh Manresa,DR Congo,82,235,0,0,0,2008,1,24
 56082,Yassin,Idbihi,,,,,,,,,,,
-1642345,Oso,Ighodaro,,,,,,,,,,,
+1642345,Oso,Ighodaro,,,,,,false,false,false,,,
 2738,Andre,Iguodala,,Arizona,USA,78,215,1,1,0,2004,1,9
 980,Zydrunas,Ilgauskas,,Atletas Kaunas,Lithuania,87,260,0,0,1,1996,1,20
 196295490,Shea,Ili,,,,,,0,0,0,,,
@@ -2762,7 +2762,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 196294113,Fiston,Ipassou,,,,,,,,,,,
 1628528,Ike,Iroegbu,,,,,,,,,,,
 77096,Byron,Irvin,,Missouri,USA,77,190,1,0,0,1989,1,22
-202681,Kyrie,Irving,,Duke,Australia,74,195,0,0,0,2011,1,1
+202681,Kyrie,Irving,,,,,,,,,,,
 1628371,Jonathan,Isaac,,,,,,,,,,,
 196295057,Kaia,Isaac,,,,,,,,,,,
 77097,Dan,Issel,,Kentucky,USA,81,235,0,0,1,1970,8,122
@@ -2882,7 +2882,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1137,Chris,Jent,,Ohio State,USA,79,220,0,1,0,-1,-1,-1
 77129,Les,Jepsen,,Iowa,USA,84,237,1,0,0,1990,2,28
 201973,Jonas,Jerebko,,Angelico Biella,Sweden,82,231,0,1,0,2009,2,39
-1629660,Ty,Jerome,,,,,,false,false,false,,,
+1629660,Ty,Jerome,,,,,,,,,,,
 201998,Curtis,Jerrells,,Baylor,USA,73,195,1,0,0,-1,-1,-1
 1962937813,Grant,Jerrett,,,,,,,,,,,
 203511,Grant,Jerrett,,Arizona,USA,82,232,0,1,0,2013,2,40
@@ -2908,7 +2908,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77130,Buck,Johnson,,Alabama,USA,79,190,0,1,0,1986,1,20
 1629661,Cameron,Johnson,,,,,,false,false,false,,,
 201291,Carldell,Johnson,,Alabama-Birmingham,USA,70,180,1,0,0,-1,-1,-1
-1643052,Chaney,Johnson,,Auburn,USA,79,220,1,1,0,,,
+1643052,Chaney,Johnson,,,,,,,,,,,
 77133,Charlie,Johnson,,California,USA,72,170,1,0,0,1971,6,93
 202419,Chris,Johnson,,Louisiana State,USA,83,210,0,1,0,-1,-1,-1
 203187,Chris,Johnson,,University of Dayton,USA,78,206,0,1,0,-1,-1,-1
@@ -3013,7 +3013,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77184,Edgar,Jones,,Nevada,USA,82,225,0,1,0,1979,2,31
 2410,Fred,Jones,,Oregon,USA,74,225,1,0,0,2002,1,14
 1630529,Herbert,Jones,,,,,,false,false,false,,,
-1642403,Isaac,Jones,,Washington State,USA,81,245,0,1,0,,,
+1642403,Isaac,Jones,,,,,,,,,,,
 77185,Jake,Jones,,Assumption,USA,75,180,1,0,0,1971,6,97
 1627883,Jalen,Jones,,Texas A&M,USA,79,220,0,1,0,2016,,
 2592,James,Jones,,Miami,USA,80,218,1,1,0,2003,2,49
@@ -3046,7 +3046,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 196294138,Terrence,Jones,,,,,,,,,,,
 203093,Terrence,Jones,,Kentucky,USA,81,252,0,1,0,2012,1,18
 1641856,Tevian,Jones,,,USA,,,0,0,0,-22,-22,-22
-1630200,Tre,Jones,,,,,,,,,,,
+1630200,Tre,Jones,,,,,,false,false,false,,,
 1626145,Tyus,Jones,,,,,,,,,,,
 77198,Wali,Jones,,Villanova,USA,74,180,1,0,0,1964,3,18
 77199,Wallace,Jones,,Kentucky,USA,76,225,0,1,0,1949,1,8
@@ -3091,7 +3091,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 562,Kakiouzis,Kakiouzis,,,,,,,,,,,
 77219,Ed,Kalafat,,Minnesota,USA,78,245,0,0,1,1954,1,9
 1630686,Georgios,Kalaitzakis,,Panathinaikos,Greece,79,192,0,1,0,2021,2,60
-1641750,Ryan,Kalkbrenner,,,,,,false,false,false,,,
+1641750,Ryan,Kalkbrenner,,,,,,,,,,,
 40083,Mantas,Kalnietis,,,,,,,,,,,
 2549,Chris,Kaman,,Central Michigan,USA,84,265,0,0,1,2003,1,6
 1626163,Frank,Kaminsky,,Wisconsin,USA,84,240,0,0,0,2015,1,9
@@ -3126,7 +3126,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 41204,Dusan,Kecman,,,,,,,,,,,
 228,Adam,Keefe,,Stanford,USA,81,230,0,1,0,1992,1,10
 77233,Harold,Keeling,,Santa Clara,USA,76,185,1,0,0,1985,3,63
-1631211,Trevor,Keels,,Duke,USA,76,221,1,0,0,2022,2,42
+1631211,Trevor,Keels,,,,,,,,,,,
 202076,Thomas,Kelati,,,,,,,,,,,
 77234,Ken,Keller,,St. John's (NY),USA,,,0,0,0,-1,-1,-1
 1630283,Kylor,Kelley,,Oregon State,USA,84,215,0,0,1,,,
@@ -3150,6 +3150,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77244,Joe,Kennedy,,Duke,USA,78,210,0,1,0,1968,10,122
 77245,William,Kennedy,,Temple,USA,71,180,1,0,0,1960,2,15
 77246,Larry,Kenon,,Memphis,USA,81,205,0,1,0,1973,3,50
+1643257,Jayson,Kent,,,,,,,,,,,
 77247,Bill,Kenville,,St. Bonaventure,USA,74,187,1,0,0,1953,,
 27017,Matthew,Kenyon,,,,,,,,,,,
 1801,Jonathan,Kerner,,East Carolina,USA,83,245,0,0,1,-1,-1,-1
@@ -3158,7 +3159,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77249,Jack,Kerris,,Loyola-Chicago,USA,78,215,0,1,0,1949,1,9
 760,Jerome,Kersey,,Longwood,USA,79,245,0,1,0,1984,2,46
 77251,Alec,Kessler,,Georgia,USA,83,230,0,1,0,1990,1,12
-1631117,Walker,Kessler,,Auburn,USA,86,245,0,0,1,2022,1,22
+1631117,Walker,Kessler,,,,,,,,,,,
 1930,Lari,Ketner,,Massachusetts,USA,82,285,0,1,0,1999,2,49
 1630296,Braxton,Key,,Virginia,USA,80,225,0,1,0,,,
 6663954,Viktor,Keyru,,,,,,,,,,,
@@ -3251,7 +3252,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77297,Howard,Komives,,Bowling Green,USA,73,185,1,0,0,1964,2,13
 1628996,Sagaba,Konate,,,,,,,,,,,
 402,Jon,Koncak,,Southern Methodist,USA,84,250,0,0,1,1985,1,5
-1629723,John,Konchar,,,,,,,,,,,
+1629723,John,Konchar,,,,,,false,false,false,,,
 77299,Bud,Koper,,Oklahoma City,USA,78,210,1,0,0,1964,2,14
 1962937546,Daniel,Koperberg,,,,,,,,,,,
 64010,Daniel,Koperberg,,,,,,0,0,1,,,
@@ -3301,7 +3302,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77322,Ray,Kuka,,Notre Dame,USA,75,200,0,1,0,-1,-1,-1
 389,Toni,Kukoc,,Benetton Treviso,Croatia,83,235,0,1,0,1990,2,29
 1629083,Arnoldas,Kulboka,,Bilbao,Lithuania,82,209,0,1,0,2018,2,55
-1630228,Jonathan,Kuminga,,NBA G League Ignite,DRC,79,225,0,1,0,2021,1,7
+1630228,Jonathan,Kuminga,,,,,,,,,,,
 77323,Kevin,Kunnert,,Iowa,USA,84,230,0,0,1,1973,1,12
 196294562,Bul,Kuol,,,,,,0,1,0,,,
 77324,Mitch,Kupchak,,North Carolina,USA,81,230,0,1,0,1976,1,13
@@ -3322,7 +3323,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77327,Fred,LaCour,,San Francisco,USA,77,210,1,0,0,1960,3,22
 1711,Raef,LaFrentz,,Kansas,USA,83,240,0,1,1,1998,1,3
 77328,Tom,LaGarde,,North Carolina,USA,82,220,0,0,1,1977,1,9
-1631222,Jake,LaRavia,,,,,,false,false,false,,,
+1631222,Jake,LaRavia,,,,,,,,,,,
 1601,Rusty,LaRue,,Wake Forest,USA,75,185,0,0,0,-22,-22,-22
 77340,Rudy,LaRusso,,Dartmouth,USA,80,220,0,1,0,1959,2,10
 203897,Zach,LaVine,,,,,,false,false,false,,,
@@ -3373,7 +3374,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 203499,Shane,Larkin,,Miami,USA,71,175,1,0,0,2013,1,18
 1962937932,Nelson,Larkins,,,,,,,,,,,
 1629097,Terry,Larrier,,,,,,,,,,,
-1641796,Pelle,Larsson,,,,,,,,,,,
+1641796,Pelle,Larsson,,,,,,false,false,false,,,
 77341,John,Laskowski,,Indiana,USA,78,185,1,0,0,1975,2,32
 201186,Stephane,Lasme,,Massachusetts,Gabon,80,215,0,1,0,2007,2,46
 41629,Stephane,Lasme,,,,,,,,,,,
@@ -3477,11 +3478,11 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 64091,Cai,Liang,,,,,,,,,,,
 77386,Marcus,Liberty,,Illinois,USA,80,205,0,1,0,1990,2,42
 77387,Todd,Lichti,,Stanford,USA,76,205,1,0,0,1989,1,15
-1630604,E.J.,Liddell,,Ohio State,USA,78,240,0,1,0,2022,2,41
+1630604,E.J.,Liddell,,,,,,,,,,,
 202732,DeAndre,Liggins,,Kentucky,USA,78,209,1,0,0,2011,2,53
 203558,David,Lighty,,,,,,,,,,,
 77388,Bill,Ligon,,Vanderbilt,USA,76,180,1,0,0,1974,10,175
-203081,Damian,Lillard,,Weber State,USA,74,200,1,0,0,2012,1,6
+203081,Damian,Lillard,,,,,,,,,,,
 41622,Raviv,Limonad,,,,,,,,,,,
 202391,Jeremy,Lin,,Harvard,USA,75,200,1,0,0,-1,-1,-1
 77389,Steve,Lingenfelter,,South Dakota State,USA,81,225,0,1,0,1981,2,44
@@ -3494,7 +3495,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 21012,Wei,Liu,,,,,,,,,,,
 21011,Xiaoyu,Liu,,,,,,,,,,,
 64114,Xiaoyu,Liu,,,,,,,,,,,
-1641726,Dereck,Lively II,,Duke,USA,85,230,0,0,0,2023,1,12
+1641726,Dereck,Lively II,,,,,,,,,,,
 1630587,Isaiah,Livers,,,,,,,,,,,
 1641753,Chris,Livingston,,Kentucky,USA,78,220,0,1,0,2023,2,58
 1626269,Denzel,Livingston,,,,,,,,,,,
@@ -3555,7 +3556,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 201567,Kevin,Love,,,,,,,,,,,
 77413,Stan,Love,,Oregon,USA,81,215,0,1,0,1971,1,9
 77414,Clyde,Lovellette,,Kansas,USA,81,234,0,0,1,1952,1,9
-1643133,Lawson,Lovering,,,,,,,,,,,
+1643133,Lawson,Lovering,,,,,,false,false,false,,,
 7005,Derrick,Low,,,,,,,,,,,
 77415,Sidney,Lowe,,North Carolina State,USA,72,195,1,0,0,1983,2,25
 77416,Chuck,Lowery,,Puget Sound,USA,75,185,1,0,0,1971,8,125
@@ -3696,12 +3697,12 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 681,Donny,Marshall,,Connecticut,USA,79,230,0,1,0,1995,2,39
 923,Donyell,Marshall,,Connecticut,USA,81,245,0,1,0,1994,1,4
 203088,Kendall,Marshall,,North Carolina,USA,76,200,1,0,0,2012,1,13
-1630230,Naji,Marshall,,,,,,false,false,false,,,
+1630230,Naji,Marshall,,,,,,,,,,,
 196294105,Nick,Marshall,,,,,,,,,,,
 101185,Rawle,Marshall,,Oakland,USA,79,190,1,1,0,-1,-1,-1
 77467,Tom,Marshall,,Western Kentucky,USA,76,215,0,1,0,1954,1,7
 77468,Vester,Marshall,,Oklahoma,USA,79,200,0,1,0,-1,-1,-1
-1642918,Alijah,Martin,,,,,,false,false,false,,,
+1642918,Alijah,Martin,,,,,,,,,,,
 77481,Bill,Martin,,Georgetown,USA,79,205,0,1,0,1985,2,26
 77478,Bob,Martin,,Minnesota,USA,84,250,0,0,1,-1,-1,-1
 77469,Brian,Martin,,Kansas,USA,81,212,0,1,0,1984,9,185
@@ -3727,11 +3728,11 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77479,Ronald,Martin,,St. Bonaventure,USA,74,185,1,0,0,1961,2,10
 77480,Slater,Martin,,Texas,USA,70,170,1,0,0,-1,-1,-1
 201227,Torrell,Martin,,,,,,,,,,,
-1631213,Tyrese,Martin,,Connecticut,USA,78,215,0,1,0,2022,2,51
+1631213,Tyrese,Martin,,,,,,,,,,,
 1630231,Kenyon,Martin Jr.,,IMG Academy (FL),USA,78,215,0,1,0,2020,2,52
 40022,Gonzalo,Martinez,,,,,,,,,,,
 1627383,Luke,Martinez,,,,,,,,,,,
-1642942,Jahmai,Mashack,,,,,,false,false,false,,,
+1642942,Jahmai,Mashack,,,,,,,,,,,
 469,Jamal,Mashburn,,Kentucky,USA,80,247,0,1,0,1993,1,4
 507,Masingue,Masingue,,,,,,,,,,,
 77482,Al,Masino,,Canisius,USA,70,174,1,0,0,-1,-1,-1
@@ -3822,7 +3823,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77512,Jack,McCloskey,,Pennsylvania,USA,74,190,1,0,0,-1,-1,-1
 45,George,McCloud,,Florida State,USA,80,230,0,1,0,1989,1,7
 1630644,Mac,McClung,,,,,,,,,,,
-203468,CJ,McCollum,,,,,,,,,,,
+203468,CJ,McCollum,,,,,,false,false,false,,,
 77513,John,McConathy,,Northwestern State,USA,77,195,0,1,0,1951,1,5
 1641799,Caleb,McConnell,,,USA,,,0,0,0,-22,-22,-22
 203566,Mickey,McConnell,,,,,,,,,,,
@@ -3961,7 +3962,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77582,Joe,Meriweather,,Southern Illinois,USA,82,215,0,0,1,1975,1,11
 77583,Porter,Meriwether,,Tennessee State,USA,74,180,1,0,0,1962,3,21
 64012,Liran,Merkado,,,,,,,,,,,
-1630241,Sam,Merrill,,,,,,,,,,,
+1630241,Sam,Merrill,,,,,,false,false,false,,,
 77584,Tom,Meschery,,Saint Mary's,USA,78,215,0,1,0,1961,1,7
 1629002,Chimezie,Metu,,USC,USA,82,225,0,1,1,2018,2,49
 684,Loren,Meyer,,Iowa State,USA,82,260,0,1,1,1995,1,24
@@ -3976,7 +3977,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 56028,Pete,Mickeal,,,,,,,,,,,
 1626175,Jordan,Mickey,,Louisiana State,USA,80,235,0,1,1,2015,2,33
 42581,Vladimir,Micov,,,,,,,,,,,
-203114,Khris,Middleton,,,,,,,,,,,
+203114,Khris,Middleton,,,,,,false,false,false,,,
 77589,Zigmund,Mihalik,,Ford City HS (PA),USA,72,180,1,0,0,-1,-1,-1
 2036,Chris,Mihm,,Texas,USA,84,265,0,0,1,2000,1,7
 1628450,Eric,Mika,,Brigham Young,USA,82,233,0,0,0,-22,-22,-22
@@ -4034,7 +4035,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 64149,Rafael,Mineiro,,,,,,,,,,,
 114,Harold,Miner,,Southern California,USA,77,210,1,0,0,1992,1,12
 2397,Yao,Ming,,Shanghai,China,90,310,0,0,1,2002,1,1
-1642434,Riley,Minix,,Morehead State,USA,79,230,0,1,0,,,
+1642434,Riley,Minix,,,,,,,,,,,
 1626305,Nick,Minnerath,,,,,,,,,,,
 1962937771,Nick,Minnerath,,,,,,0,0,0,,,
 77609,Dirk,Minniefield,,Kentucky,USA,75,180,1,0,0,1983,2,33
@@ -4097,7 +4098,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1630272,EJ,Montgomery,,,USA,,,0,0,0,-22,-22,-22
 77630,Howie,Montgomery,,Texas-Pan American,USA,76,220,0,1,0,1962,7,59
 376,Eric,Montross,,North Carolina,USA,84,270,0,0,1,1994,1,9
-1630541,Moses,Moody,,,,,,false,false,false,,,
+1630541,Moses,Moody,,,,,,,,,,,
 200081,Jamario,Moon,,Meridian CC,USA,80,205,0,1,0,-1,-1,-1
 1629875,Xavier,Moon,,Morehead State,USA,72,165,1,0,0,-1,-1,-1
 77631,Jim,Mooney,,Villanova,USA,77,215,0,1,0,-1,-1,-1
@@ -4206,7 +4207,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77674,Tod,Murphy,,California-Irvine,USA,81,220,0,0,1,1986,3,53
 2211,Troy,Murphy,,Notre Dame,USA,83,245,0,1,1,2001,1,14
 1630530,Trey,Murphy III,,,,,,false,false,false,,,
-1627749,Dejounte,Murray,,Washington,USA,76,180,1,0,0,2016,1,29
+1627749,Dejounte,Murray,,,,,,false,false,false,,,
 2436,Flip,Murray,,Shaw,USA,75,200,1,0,0,2002,2,41
 1627750,Jamal,Murray,,,,,,false,false,false,,,
 1631099,Keegan,Murray,,,,,,false,false,false,,,
@@ -4565,7 +4566,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77820,John,Paxson,,Notre Dame,USA,74,185,1,0,0,1983,1,19
 77821,Johnny,Payak,,Bowling Green,USA,76,174,1,0,0,-1,-1,-1
 203940,Adreian,Payne,,Michigan State,USA,82,237,0,1,0,2014,1,15
-1626166,Cameron,Payne,,,,,,,,,,,
+1626166,Cameron,Payne,,,,,,false,false,false,,,
 77822,Kenny,Payne,,Louisville,USA,80,195,0,1,0,1989,1,19
 77823,Tom,Payne,,Kentucky,USA,86,240,0,0,1,-1,-1,-1
 203901,Elfrid,Payton,,Louisana-Lafayette,USA,75,195,1,0,0,2014,1,10
@@ -4579,6 +4580,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 200762,Oleksiy,Pecherov,,Kyiv,Ukraine,84,234,0,1,1,2006,1,18
 6008,Oleksiy,Pecherov,,,,,,,,,,,
 77827,Wiley,Peck,,Mississippi State,USA,79,220,1,0,0,1979,1,19
+1642951,Sean,Pedulla,,,,,,,,,,,
 324,Anthony,Peeler,,Missouri,USA,76,208,1,0,0,1992,1,15
 56005,Kaya,Peker,,,,,,,,,,,
 201593,Nikola,Pekovic,,Panathinaikos,Montenegro,83,307,0,0,1,2008,2,31
@@ -4675,7 +4677,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77863,Tom,Piotrowski,,La Salle,USA,85,240,0,0,1,1983,3,62
 1629800,Kavion,Pippen,,,,,,,,,,,
 937,Scottie,Pippen,,Central Arkansas,USA,80,228,1,1,0,1987,1,5
-1630590,Scotty,Pippen Jr.,,,,,,,,,,,
+1630590,Scotty,Pippen Jr.,,,,,,false,false,false,,,
 77864,Charlie,Pittman,,Maryland,USA,80,220,0,1,0,1982,3,61
 202354,Dexter,Pittman,,Texas,USA,83,285,0,0,1,2010,2,32
 200819,Kevin,Pittsnogle,,,,,,,,,,,
@@ -4684,9 +4686,9 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 2565,Zoran,Planinic,,Cibona,Croatia,79,200,1,1,0,2003,1,22
 64029,Alex,Pledger,,,,,,,,,,,
 202353,Tibor,Pleiss,,FC Barcelona,Germany,87,256,0,0,1,2010,2,31
-1631342,Daeqwon,Plowden,,,,,,,,,,,
+1631342,Daeqwon,Plowden,,,,,,false,false,false,,,
 1627850,Marshall,Plumlee,,Duke,USA,84,250,0,0,1,-1,-1,-1
-203486,Mason,Plumlee,,Duke,USA,82,254,0,1,1,2013,1,22
+203486,Mason,Plumlee,,,,,,,,,,,
 203101,Miles,Plumlee,,Duke,USA,83,249,0,0,1,2012,1,26
 196295091,Alfonso ,Plummer,,,,,,0,0,0,,,
 77865,Gary,Plummer,,Boston University,USA,81,215,0,1,0,1984,2,45
@@ -4695,8 +4697,8 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 56048,Martynas,Pocius,,,,,,,,,,,
 2750,Pavel,Podkolzin,,Metis Varese,Russia,89,260,0,0,1,2004,1,21
 520,Pavel,Podkolzin,,,,,,,,,,,
-1641764,Brandin,Podziemski,,,,,,,,,,,
-1627751,Jakob,Poeltl,,,,,,,,,,,
+1641764,Brandin,Podziemski,,,,,,false,false,false,,,
+1627751,Jakob,Poeltl,,,,,,false,false,false,,,
 1626218,Sir'Dominic,Pointer,,,,,,,,,,,
 1629738,Vincent,Poirier,,Baskonia,France,84,235,0,1,1,-1,-1,-1
 196294539,Vincent,Poirier,,,,,,,,,,,
@@ -4731,14 +4733,14 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 77878,Bob,Portman,,Creighton,USA,77,200,0,1,0,1969,1,7
 204001,Kristaps,Porzingis,,,,,,,,,,,
 1899,James,Posey,,Xavier,USA,80,217,0,1,0,1999,1,18
-1642366,Quinten,Post,,,,,,,,,,,
+1642366,Quinten,Post,,,,,,false,false,false,,,
 2068,Lavor,Postell,,St. John's (NY),USA,77,215,1,1,0,2000,2,39
 958,Vitaly,Potapenko,,Wright State,Ukraine,82,285,0,1,1,1996,1,12
 1630695,Micah,Potter,,,,,,,,,,,
 1642967,John,Poulakidas,,,,,,,,,,,
 200796,Leon,Powe,,California,USA,80,240,0,1,0,2006,2,49
 201225,Carlos,Powell,,,,,,,,,,,
-1642962,Drake,Powell,,,,,,,,,,,
+1642962,Drake,Powell,,,,,,false,false,false,,,
 203939,Dwight,Powell,,,,,,,,,,,
 2694,Josh,Powell,,North Carolina State,USA,81,240,0,1,0,-1,-1,-1
 1641920,Justin,Powell,,,USA,,,0,0,0,-22,-22,-22
@@ -4771,14 +4773,14 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 203143,Pablo,Prigioni,,Baskonia,Argentina,75,185,1,0,0,-22,-22,-22
 41540,Pablo,Prigioni,,,,,,,,,,,
 1630563,Joshua,Primo,,Alabama,Canada,76,189,1,0,0,2021,1,12
-1627752,Taurean,Prince,,Baylor,USA,78,218,0,1,0,2016,1,12
+1627752,Taurean,Prince,,,,,,,,,,,
 2419,Tayshaun,Prince,,Kentucky,USA,81,212,0,1,0,2002,1,23
 77887,John,Pritchard,,Drake,USA,81,220,0,0,1,1949,7,
 340,Kevin,Pritchard,,Kansas,USA,75,180,1,0,0,1990,2,34
 1630202,Payton,Pritchard,,,,,,,,,,,
 1642878,Tyrese,Proctor,,,,,,,,,,,
 1919,Laron,Profit,,Maryland,USA,77,204,1,1,0,1999,2,38
-1641765,Olivier-Maxence,Prosper,,,,,,,,,,,
+1641765,Olivier-Maxence,Prosper,,,,,,false,false,false,,,
 201172,Gabe,Pruitt,,Southern California,USA,76,170,1,0,0,2007,2,32
 202065,Shaun,Pruitt,,,,,,,,,,,
 2038,Joel,Przybilla,,Minnesota,USA,85,245,0,0,1,2000,1,9
@@ -4793,7 +4795,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1627753,Zhou,Qi,,Xinjiang,China,85,210,0,0,0,2016,2,43
 1626180,Michael,Qualls,,,,,,,,,,,
 1627817,Tim,Quarterman,,Louisiana State,USA,78,190,0,0,0,-22,-22,-22
-1642852,Derik,Queen,,,,,,false,false,false,,,
+1642852,Derik,Queen,,,,,,,,,,,
 1630243,Trevelin,Queen,,New Mexico State,USA,77,190,1,0,0,,,
 1629674,Neemias,Queta,,,,,,false,false,false,,,
 77892,Bob,Quick,,Xavier,USA,77,215,0,1,0,1968,2,18
@@ -4865,7 +4867,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1642875,Maxime,Raynaud,,,,,,false,false,false,,,
 77922,Connie,Rea,,Centenary-Louisiana,USA,75,175,1,0,0,1953,,
 1641871,Duop,Reath,,Louisiana State,South Sudan,81,245,0,0,1,,,
-1630559,Austin,Reaves,,,,,,,,,,,
+1630559,Austin,Reaves,,,,,,false,false,false,,,
 77923,Joe,Reaves,,Bethel,USA,77,210,0,1,0,1973,3,42
 1629729,Josh,Reaves,,Penn State,USA,76,214,1,1,0,-22,-22,-22
 1442,Zeljko,Rebraca,,Panathinaikos,Serbia,84,265,0,0,1,1994,2,54
@@ -4879,7 +4881,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1628432,Davon,Reed,,Miami,USA,77,206,1,0,0,2017,2,32
 77927,Hub,Reed,,Oklahoma City,USA,81,215,0,0,1,1958,2,14
 2770,Justin,Reed,,Mississippi,USA,80,240,0,1,0,2004,2,40
-1630194,Paul,Reed,,,,,,false,false,false,,,
+1630194,Paul,Reed,,,,,,,,,,,
 77928,Ron,Reed,,Notre Dame,USA,77,205,0,1,0,1965,3,20
 203186,Willie,Reed,,St. Louis,USA,83,245,0,0,1,2011,0,0
 77929,Willis,Reed,,Grambling,USA,82,235,0,0,1,1964,2,8
@@ -4961,7 +4963,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1630203,Grant,Riller,,College of Charleston,USA,74,190,1,0,0,2020,2,56
 77965,Rich,Rinaldi,,St. Peter's,USA,75,195,1,0,0,1971,3,43
 77966,Mike,Riordan,,Providence,USA,76,200,0,1,0,1967,12,128
-1642258,Zaccharie,Risacher,,,,,,false,false,false,,,
+1642258,Zaccharie,Risacher,,,,,,,,,,,
 77967,Arnie,Risen,,Ohio State,USA,81,200,0,0,1,-1,-1,-1
 77968,Goebel,Ritter,,Eastern Kentucky,USA,74,185,1,0,0,-22,-22,-22
 77969,Ramon,Rivas,,Temple,Puerto Rico,82,260,0,1,0,-1,-1,-1
@@ -5034,7 +5036,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78000,John,Roche,,South Carolina,USA,75,170,1,0,0,1971,1,14
 78001,Gene,Rock,,Southern California,USA,69,155,1,0,0,-1,-1,-1
 78002,Jack,Rocker,,California,USA,77,185,0,0,1,-22,-22,-22
-1631223,David,Roddy,,Colorado State,USA,76,255,0,1,0,2022,1,23
+1631223,David,Roddy,,,,,,,,,,,
 78003,Guy,Rodgers,,Temple,USA,72,185,1,0,0,-22,-22,-22
 202078,Leon,Rodgers,,,,,,,,,,,
 1642485,DJ,Rodman,,,,,,,,,,,
@@ -5164,6 +5166,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78059,Mike,Sanders,,UCLA,USA,78,210,0,1,0,1982,4,74
 78060,Thomas,Sanders,,New York University,USA,78,210,0,1,0,1960,1,8
 52610,Matias,Sandes,,,,,,,,,,,
+1642362,Payton,Sandfort,,,,,,,,,,,
 101257,Eric,Sandrin,,,,,,,,,,,
 56064,Viktor,Sanikidze,,,,,,,,,,,
 1641766,Adama,Sanogo,,UCONN,Mali,81,245,0,1,0,-22,-22,-22
@@ -5182,7 +5185,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1630846,Olivier,Sarr,,Kentucky,France,82,240,0,0,1,,,
 987,Jason,Sasser,,Texas Tech,USA,79,225,0,1,0,1996,2,41
 2219,Jeryl,Sasser,,Southern Methodist,USA,78,200,1,0,0,2001,1,22
-1631204,Marcus,Sasser,,,,,,,,,,,
+1631204,Marcus,Sasser,,,,,,false,false,false,,,
 2781,Romain,Sato,,,,,,,,,,,
 56003,Romain,Sato,,,,,,,,,,,
 203107,Tomas,Satoransky,,FC Barcelona,Czech Republic,79,210,1,0,0,2012,2,32
@@ -5217,7 +5220,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78078,Ossie,Schectman,,Long Island-Brooklyn,USA,72,175,1,0,0,-1,-1,-1
 88,Steve,Scheffler,,Purdue,USA,81,250,0,1,0,1990,2,39
 78080,Tom,Scheffler,,Purdue,USA,83,240,0,0,1,1977,6,117
-1631248,Baylor,Scheierman,,,,,,false,false,false,,,
+1631248,Baylor,Scheierman,,,,,,,,,,,
 78081,Dave,Schellhase,,Purdue,USA,75,205,1,0,0,1966,1,10
 101195,Luke,Schenscher,,Georgia Tech,USA,85,265,0,0,1,-22,-22,-22
 78082,Herb,Scherer,,Long Island-Brooklyn,USA,81,212,0,0,1,1950,2,
@@ -5298,13 +5301,13 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1539,God,Shammgod,,Providence,USA,72,169,1,0,0,1997,2,45
 78123,Earl,Shannon,,Rhode Island,USA,71,170,1,0,0,-1,-1,-1
 78124,Howie,Shannon,,Kansas State,USA,74,175,1,0,0,1949,1,1
-1630545,Terrence,Shannon Jr.,,Illinois,USA,78,215,1,1,0,2024,1,27
+1630545,Terrence,Shannon Jr.,,,,,,,,,,,
 78125,Charlie,Share,,Bowling Green,USA,83,235,0,0,1,1950,1,1
 78126,Bill,Sharman,,Southern California,USA,73,175,1,0,0,1950,2,
 41623,Derrick,Sharp,,,,,,,,,,,
 556,Derrick,Sharp,,,,,,,,,,,
 1642481,Jamarion,Sharp,,,USA,,,0,0,0,-22,-22,-22
-1630549,Day'Ron,Sharpe,,,,,,false,false,false,,,
+1630549,Day'Ron,Sharpe,,,,,,,,,,,
 1631101,Shaedon,Sharpe,,,,,,,,,,,
 201594,Walter,Sharpe,,Alabama-Birmingham,USA,81,245,0,1,0,2008,2,32
 1117,John,Shasky,,Minnesota,USA,83,235,0,0,1,1986,3,61
@@ -5319,7 +5322,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78132,Craig,Shelton,,Georgetown,USA,79,210,0,1,0,1980,2,28
 78133,Lonnie,Shelton,,Oregon State,USA,80,240,0,1,0,1976,2,25
 203129,Tornike,Shengelia,,Spirou Charleroi,Georgia,81,240,0,1,0,2012,2,54
-1641767,Ben,Sheppard,,,,,,false,false,false,,,
+1641767,Ben,Sheppard,,,,,,,,,,,
 1852,Jeff,Sheppard,,Kentucky,USA,75,190,1,0,0,-1,-1,-1
 2135,Nick,Sheppard,,,,,,,,,,,
 1642263,Reed,Sheppard,,,,,,,,,,,
@@ -5350,7 +5353,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 40093,Alexey,Shved,,,,,,,,,,,
 9008,Alexey,Shved,,,,,,,,,,,
 64139,Kun,Si,,,,,,,,,,,
-1627783,Pascal,Siakam,,,,,,,,,,,
+1627783,Pascal,Siakam,,,,,,false,false,false,,,
 1626296,Jordan,Sibert,,Dayton,USA,76,187,1,0,0,2015,,
 78144,Sam,Sibert,,Kentucky State,USA,79,215,0,1,0,1972,2,19
 78145,Mark,Sibley,,Northwestern,USA,74,175,1,0,0,1973,4,64
@@ -5380,10 +5383,10 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1629779,Justin,Simon,,,,,,,,,,,
 1750,Miles,Simon,,Arizona,USA,75,202,1,0,0,1998,2,42
 1630250,Marko,Simonovic,,Mega Basket,Montenegro,84,220,0,0,1,2020,2,44
-1629014,Anfernee,Simons,,,,,,false,false,false,,,
+1629014,Anfernee,Simons,,,,,,,,,,,
 54,Dickey,Simpkins,,Providence,USA,81,255,0,1,0,1994,1,21
 202067,Diamon,Simpson,,St. Mary's (CA),USA,79,230,0,1,0,-1,-1,-1
-1642354,KJ,Simpson,,Colorado,USA,74,189,1,0,0,2024,2,42
+1642354,KJ,Simpson,,,,,,,,,,,
 78157,Ralph,Simpson,,Michigan State,USA,77,200,1,0,0,1972,1,11
 1630285,Zavier,Simpson,,Michigan,USA,72,190,0,0,0,-22,-22,-22
 1591,Alvin,Sims,,Louisville,USA,76,235,1,0,0,-1,-1,-1
@@ -5427,7 +5430,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78172,Jose,Slaughter,,Portland,USA,77,205,1,0,0,1982,2,43
 201201,Marcus,Slaughter,,,,,,,,,,,
 56057,Marcus,Slaughter,,,,,,,,,,,
-1641771,Jalen,Slawson,,Furman,USA,79,215,0,1,0,2023,2,54
+1641771,Jalen,Slawson,,,,,,,,,,,
 2447,Tamar,Slay,,Marshall,USA,80,215,1,0,0,2002,2,53
 202388,Donald,Sloan,,Texas A&M,USA,75,205,1,0,0,-1,-1,-1
 78173,Jerry,Sloan,,Evansville,USA,77,195,1,0,0,1965,1,4
@@ -5435,7 +5438,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 267635,Kostas,Sloukas,,,,,,,,,,,
 78174,Tom,Sluby,,Notre Dame,USA,76,200,1,0,0,1984,2,41
 1629346,Alen,Smailagic,,Beko,Serbia,82,215,0,1,0,2019,2,39
-1642914,Javon,Small,,,,,,,,,,,
+1642914,Javon,Small,,,,,,false,false,false,,,
 1630606,Javonte,Smart,,Louisiana State,USA,76,205,1,0,0,,,
 78175,Keith,Smart,,Indiana,USA,73,175,1,0,0,1988,2,41
 203935,Marcus,Smart,,,,,,false,false,false,,,
@@ -5475,7 +5478,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 2747,JR,Smith,,No College,USA,78,220,1,0,0,2004,1,18
 201650,JaJuan,Smith,,,,,,,,,,,
 2074,Jabari,Smith,,Louisiana State,USA,83,250,0,0,1,2000,2,45
-1630188,Jalen,Smith,,,,,,false,false,false,,,
+1630188,Jalen,Smith,,,,,,,,,,,
 200815,Jamar,Smith,,,,,,,,,,,
 202446,Jamar,Smith,,,,,,,,,,,
 201160,Jason,Smith,,Colorado State,USA,84,240,0,1,1,2007,1,20
@@ -5511,7 +5514,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1642449,Tolu,Smith,,,,,,,,,,,
 2596,Tommy,Smith,,,,,,,,,,,
 380,Tony,Smith,,Marquette,USA,76,205,0,0,0,1990,2,51
-1641890,Tyler,Smith,,NBA G League Ignite,USA,81,224,0,1,0,2024,2,33
+1641890,Tyler,Smith,,,,,,,,,,,
 78208,Willie,Smith,,Missouri,USA,74,170,1,0,0,1976,2,18
 1629146,Zach,Smith,,,,,,,,,,,
 1629015,Zhaire,Smith,,Texas Tech,USA,75,205,1,0,0,2018,1,16
@@ -5545,6 +5548,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78219,Willie,Somerset,,Duquesne,USA,68,170,1,0,0,1965,7,56
 203154,Greg,Somogyi,,,,,,,,,,,
 2443,Darius,Songaila,,Wake Forest,Lithuania,81,248,0,1,0,2002,2,49
+1642850,Thomas,Sorber,,,,,,,,,,,
 78220,Dave,Sorenson,,Ohio State,USA,80,225,0,1,0,1970,2,26
 64013,Roman,Sorkin,,,,,,,,,,,
 1626293,Edgar,Sosa,,,,,,,,,,,
@@ -5566,7 +5570,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1642285,Cam,Spencer,,,,,,false,false,false,,,
 771,Elmore,Spencer,,UNLV,USA,84,270,0,0,1,1992,1,25
 280,Felton,Spencer,,Louisville,USA,84,290,0,0,1,1990,1,6
-1630311,Pat,Spencer,,,,,,false,false,false,,,
+1630311,Pat,Spencer,,,,,,,,,,,
 78230,Lou,Spicer,,Syracuse,USA,74,195,0,1,0,-1,-1,-1
 78231,Craig,Spitzer,,Tulane,USA,84,225,0,0,1,-22,-22,-22
 201168,Tiago,Splitter,,Bilbao,Brazil,83,245,0,1,1,2007,1,28
@@ -5650,7 +5654,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78267,Paul,Stovall,,Arizona State,USA,76,215,0,1,0,1972,2,22
 201199,DJ,Strawberry,,Maryland,USA,77,201,1,0,0,2007,2,59
 78268,Joe,Strawder,,Bradley,USA,82,235,0,0,1,1964,4,34
-1631124,Julian,Strawther,,,,,,false,false,false,,,
+1631124,Julian,Strawther,,,,,,,,,,,
 78269,Bill,Stricker,,Pacific,USA,80,210,0,1,0,1970,4,54
 201240,Brad,Stricker,,,,,,,,,,,
 1065,Erick,Strickland,,Nebraska,USA,75,218,1,0,0,-1,-1,-1
@@ -5721,7 +5725,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1630256,Jae'Sean,Tate,,,,,,,,,,,
 78294,Earl,Tatum,,Marquette,USA,76,185,1,0,0,1976,2,21
 201249,Jamaal,Tatum,,,,,,,,,,,
-1628369,Jayson,Tatum,,Duke,USA,80,210,1,1,0,2017,1,3
+1628369,Jayson,Tatum,,,,,,false,false,false,,,
 204002,Edy,Tavares,,Gran Canaria,Cabo Verde,87,265,0,0,1,2014,2,43
 196294609,Maique,Tavares,,,,,,,,,,,
 196294540,Walter,Tavares,,,,,,0,0,1,,,
@@ -5965,7 +5969,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78381,Jeff,Turner,,Vanderbilt,USA,81,230,0,1,0,1984,1,17
 1819,John,Turner,,Phillips,USA,80,245,0,1,0,1991,1,20
 201213,Larry,Turner,,,,,,,,,,,
-1626167,Myles,Turner,,,,,,,,,,,
+1626167,Myles,Turner,,,,,,false,false,false,,,
 1943,Wayne,Turner,,Kentucky,USA,74,190,1,0,0,-1,-1,-1
 78386,Mel,Turpin,,Kentucky,USA,83,240,0,0,1,1984,1,6
 78387,Dave,Twardzik,,Old Dominion,USA,73,175,1,0,0,1972,2,26
@@ -6084,7 +6088,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 2756,Sasha,Vujacic,,Udine,Slovenia,79,195,1,0,0,2004,1,27
 2525,Milos,Vujanic,,,,,,,,,,,
 267619,Nikola,Vujcic,,,,,,,,,,,
-1641774,Tristan,Vukcevic,,,,,,false,false,false,,,
+1641774,Tristan,Vukcevic,,,,,,,,,,,
 196294557,Sam,Waardenburg,,,,,,1,0,0,,,
 1629731,Dean,Wade,,,,,,false,false,false,,,
 2548,Dwyane,Wade,,Marquette,USA,76,220,1,0,0,2003,1,5
@@ -6167,7 +6171,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78456,Henry,Ward,,Jackson State,USA,76,195,1,0,0,1975,6,99
 203810,Casper,Ware,,Long Beach State,USA,70,175,1,0,0,-1,-1,-1
 78457,Jim,Ware,,Oklahoma City,USA,79,210,0,1,0,1966,3,26
-1642276,Kel'el,Ware,,,,,,false,false,false,,,
+1642276,Kel'el,Ware,,,,,,,,,,,
 78458,Ben,Warley,,Tennessee State,USA,77,200,0,1,0,1961,1,6
 78459,Bob,Warlick,,Pepperdine,USA,77,200,1,0,0,-22,-22,-22
 78460,Cornell,Warner,,Jackson State,USA,81,220,0,1,0,1970,2,24
@@ -6197,7 +6201,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1631102,TyTy,Washington Jr.,,,,,,,,,,,
 1629139,Yuta,Watanabe,,George Washington,Japan,81,215,1,1,0,-22,-22,-22
 1629682,Tremont,Waters,,Louisiana State,USA,70,175,1,0,0,2019,2,51
-1630322,Lindy,Waters III,,Oklahoma State,USA,77,210,0,1,0,,,
+1630322,Lindy,Waters III,,,,,,,,,,,
 204024,Christian,Watford,,,,,,,,,,,
 1630570,Trendon,Watford,,,,,,,,,,,
 201208,Darryl,Watkins,,Syracuse,USA,83,258,0,0,1,-1,-1,-1
@@ -6249,7 +6253,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1528,Bubba,Wells,,Austin Peay,USA,77,230,0,1,0,1997,2,34
 1626190,Dez,Wells,,,,,,,,,,,
 1627361,Dez,Wells,,,,,,,,,,,
-1642377,Jaylen,Wells,,,,,,,,,,,
+1642377,Jaylen,Wells,,,,,,false,false,false,,,
 78488,Owen,Wells,,Detroit,USA,79,200,0,1,0,1974,5,77
 78489,Ralph,Wells,,Northwestern,USA,73,180,1,0,0,-1,-1,-1
 1846,Chris,Welp,,Washington,USA,84,245,0,0,1,1987,1,16
@@ -6368,7 +6372,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78540,Bernie,Williams,,La Salle,USA,75,175,1,0,0,1969,2,21
 78564,Bob,Williams,,Florida A&M,USA,78,230,0,1,0,-1,-1,-1
 1585,Brandon,Williams,,Davidson,USA,78,215,0,1,0,-1,-1,-1
-1630314,Brandon,Williams,,,,,,false,false,false,,,
+1630314,Brandon,Williams,,,,,,,,,,,
 1642924,Brice,Williams,,,,,,,,,,,
 1631258,Bryson,Williams,,,USA,,,0,0,0,-22,-22,-22
 433,Buck,Williams,,Maryland,USA,80,225,0,1,0,1981,1,3
@@ -6388,16 +6392,16 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 677,Eric,Williams,,Providence,USA,80,220,1,1,0,1995,1,14
 2421,Frank,Williams,,Illinois,USA,75,212,1,0,0,2002,1,25
 78548,Freeman,Williams,,Portland State,USA,76,190,1,0,0,1978,1,8
-1629684,Grant,Williams,,,,,,false,false,false,,,
+1629684,Grant,Williams,,,,,,,,,,,
 78549,Gus,Williams,,Southern California,USA,74,175,1,0,0,1975,2,20
 78550,Guy,Williams,,Washington State,USA,81,200,0,1,0,1983,2,34
 1006,Herb,Williams,,Ohio State,USA,83,260,0,0,1,1981,1,14
 73,Hot Rod,Williams,,Tulane,USA,83,245,0,0,1,1985,2,45
-1631114,Jalen,Williams,,,,,,false,false,false,,,
+1631114,Jalen,Williams,,,,,,,,,,,
 1715,Jason,Williams,,Florida,USA,73,180,1,0,0,1998,1,7
 101214,Jawad,Williams,,North Carolina,USA,81,218,0,1,0,-1,-1,-1
 2398,Jay,Williams,,Duke,USA,74,195,1,0,0,2002,1,2
-1631119,Jaylin,Williams,,,,,,,,,,,
+1631119,Jaylin,Williams,,,,,,false,false,false,,,
 1642444,Jaylin,Williams,,,,,,,,,,,
 420,Jayson,Williams,,St. John's (NY),USA,82,245,0,1,0,1990,1,21
 966,Jerome,Williams,,Georgetown,USA,81,206,0,1,1,1996,1,26
@@ -6407,7 +6411,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 200818,Justin,Williams,,Wyoming,USA,82,230,0,0,0,-22,-22,-22
 200962,Justin,Williams,,,,,,,,,,,
 78555,Kenny,Williams,,Elizabeth City State,USA,81,205,0,1,0,1990,2,46
-1629026,Kenrich,Williams,,,,,,false,false,false,,,
+1629026,Kenrich,Williams,,,,,,,,,,,
 78556,Kevin,Williams,,St. John's (NY),USA,74,175,1,0,0,1983,2,46
 31,Lorenzo,Williams,,Stetson,USA,81,230,0,1,0,-1,-1,-1
 101150,Lou,Williams,,South Gwinnett HS (GA),USA,74,175,1,0,0,2005,2,45
@@ -6511,7 +6515,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 78606,Dave,Wohl,,Pennsylvania,USA,74,185,1,0,0,1971,3,46
 43202,Jonas,Wohlfarth Botterman,,,,,,,,,,,
 43223,Kevin,Wohlrath,,,,,,,,,,,
-1642874,Danny,Wolf,,,,,,,,,,,
+1642874,Danny,Wolf,,,,,,false,false,false,,,
 341,Joe,Wolf,,North Carolina,USA,83,260,0,0,0,1987,1,13
 2106,Ruben,Wolkowyski,,Estudiantes de Olavarria,Argentina,82,275,0,1,0,-1,-1,-1
 524,Wolkowyski,Wolkowyski,,,,,,,,,,,
@@ -6572,7 +6576,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 1962937760,Huang,Xu,,,,,,,,,,,
 64092,Huang,Xu,,,,,,,,,,,
 64097,Luo,Xudong,,,,,,1,0,0,,,
-1627824,Guerschon,Yabusele,,,,,,,,,,,
+1627824,Guerschon,Yabusele,,,,,,false,false,false,,,
 196294542,Guerschon,Yabusele,,,,,,0,1,0,,,
 196295539,Liu,Yancheng,,,,,,0,0,0,,,
 1642905,Hansen,Yang,,,,,,,,,,,
@@ -6610,7 +6614,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 201970,Sam,Young,,Pittsburgh,USA,78,225,1,1,0,2009,2,36
 201152,Thaddeus,Young,,Georgia Tech,USA,80,225,0,1,0,2007,1,12
 1937,Tim,Young,,Stanford,USA,86,270,0,0,1,1999,2,56
-1629027,Trae,Young,,Oklahoma,USA,74,164,0,0,0,2018,1,5
+1629027,Trae,Young,,,,,,false,false,false,,,
 1642959,Chris,Youngblood,,,,,,,,,,,
 1962937772,Shi,Yuchen,,,,,,,,,,,
 64095,Tian,Yuchen,,,,,,,,,,,
@@ -6657,7 +6661,7 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 678,George,Zidek,,UCLA,USA,84,264,0,0,1,1995,1,22
 1962937762,Tang,Zihao,,,,,,,,,,,
 64094,Tang,Zihao,,,,,,,,,,,
-1642911,Rocco,Zikarsky,,-,Australia,87,227,0,0,1,2025,2,45
+1642911,Rocco,Zikarsky,,,,,,,,,,,
 2583,Derrick,Zimmerman,,Mississippi State,USA,75,195,1,0,0,2003,2,40
 1627757,Stephen,Zimmerman,,UNLV,USA,84,240,0,0,1,2016,2,41
 1627835,Paul,Zipser,,Bayern Munich,Germany,80,226,0,1,0,2016,2,48
@@ -6671,10 +6675,10 @@ personId,firstName,lastName,birthDate,school,country,heightInches,bodyWeightLbs,
 42540,Luka,Zoric,,,,,,,,,,,
 43311,Luka,Zoric,,,,,,,,,,,
 42588,Aleksey,Zozulin,,,,,,,,,,,
-1627826,Ivica,Zubac,,Mega Basket,Croatia,84,240,0,0,0,2016,2,32
+1627826,Ivica,Zubac,,,,,,,,,,,
 1441,Aurelijius,Zukauskas,,,,,,,,,,,
 78650,Matt,Zunic,,George Washington,USA,75,195,1,0,0,1947,,
-1641783,Tristan,da Silva,,,,,,,,,,,
+1641783,Tristan,da Silva,,,,,,false,false,false,,,
 1628437,George,de Paula,,,,,,,,,,,
 1962936150,Maurillioh,de Rosa,,,,,,,,,,,
 560,de la Fuente,de la Fuente,,,,,,,,,,,
