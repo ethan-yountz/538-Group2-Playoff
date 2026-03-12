@@ -3,7 +3,7 @@ predict.py
 =======================
 Fills in the Predictions.csv file with model predictions for all three variables:
   - Total   : Home Points + Away Points  (THIS FILE — Ridge regression, 13 features)
-  - Spread  : Home Points - Away Points  (ADD YOUR MODEL IN SECTION B)
+  - Spread  : Home Points - Away Points  (XGBoost model from spread_model.py)
   - OREB    : Offensive Rebounds         (ADD YOUR MODEL IN SECTION C)
 
 Usage:
@@ -26,10 +26,13 @@ from sklearn.preprocessing import StandardScaler
 # 0. LOAD DATA
 # ─────────────────────────────────────────────────────────────────────────────
 from pathlib import Path
+import spread_model as sm
 
-MASTER_CSV     = Path(__file__).resolve().parent / "Data" / "final" / "master_games_model_ready_regular_season.csv"
-PREDICTIONS_CSV = "Predictions.csv"
-OUTPUT_CSV      = "Predictions_filled.csv"
+BASE_DIR = Path(__file__).resolve().parent
+MASTER_CSV = BASE_DIR / "Data" / "final" / "master_games_model_ready_regular_season.csv"
+SCHEDULE_CSV = BASE_DIR / "Data" / "LeagueSchedule25_26.csv"
+PREDICTIONS_CSV = BASE_DIR / "Predictions.csv"
+OUTPUT_CSV = BASE_DIR / "Predictions_filled.csv"
 
 # Load the full historical dataset
 df = pd.read_csv(MASTER_CSV, low_memory=False)
@@ -428,7 +431,7 @@ print(f"  Total predictions: min={pred_df['Total'].min():.1f}  "
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# SECTION B — SPREAD PREDICTION MODEL  (ADD YOUR CODE HERE)
+# SECTION B — SPREAD PREDICTION MODEL
 # ─────────────────────────────────────────────────────────────────────────────
 # Spread = Home Points - Away Points
 #
@@ -467,8 +470,267 @@ print(f"  Total predictions: min={pred_df['Total'].min():.1f}  "
 # pred_df_sorted["Spread_pred"] = spread_preds
 # pred_df = pred_df.merge(pred_df_sorted[["PredDate","HomeShort","AwayShort","Spread_pred"]], ...)
 # pred_df["Spread"] = pred_df["Spread_pred"]
+print("\n" + "=" * 60)
+print("SECTION B: Building Spread prediction model...")
+print("=" * 60)
 
-print("\n  Spread predictions: NOT YET FILLED (add model in SECTION B)")
+spread_history = sm.load_data()
+spread_train = sm.build_model_frame(spread_history).dropna(subset=sm.FEATURES + [sm.TARGET]).copy()
+
+X_train_spread = spread_train[sm.FEATURES].astype(float)
+y_train_spread = spread_train[sm.TARGET].values
+spread_feature_medians = X_train_spread.median(numeric_only=True)
+X_train_spread = X_train_spread.fillna(spread_feature_medians).fillna(0.0)
+
+model_spread = sm.XGBRegressor(**sm.XGBOOST_PARAMS)
+model_spread.fit(X_train_spread, y_train_spread)
+
+print(f"  Training games: {len(spread_train)}")
+print(f"  Features: {sm.FEATURES}")
+print(f"  Params: {sm.XGBOOST_PARAMS}")
+print(f"  History through: {spread_history['gameDate'].max()}")
+
+
+def spread_season_key(game_date):
+    return game_date.year if game_date.month >= sm.SEASON_START_MONTH else game_date.year - 1
+
+
+def build_spread_team_history(history_df):
+    margin = pd.to_numeric(history_df["HomePTS"], errors="coerce") - pd.to_numeric(
+        history_df["AwayPTS"], errors="coerce"
+    )
+
+    home_rows = pd.DataFrame(
+        {
+            "gameDate": history_df["gameDate"],
+            "season": history_df["season"],
+            "team": history_df["HomeTeam"],
+            "teamId": history_df["HomeTeamId"],
+            "is_home": 1.0,
+            "margin": margin,
+            "win": (margin > 0).astype(float),
+            "pts_for": pd.to_numeric(history_df["HomePTS"], errors="coerce"),
+            "pts_against": pd.to_numeric(history_df["AwayPTS"], errors="coerce"),
+            "poss": pd.to_numeric(history_df["Home_poss"], errors="coerce"),
+            "ts": pd.to_numeric(history_df["Home_TS"], errors="coerce"),
+            "three_pa_rate": pd.to_numeric(history_df["Home_3PA_rate"], errors="coerce"),
+            "tov_rate": pd.to_numeric(history_df["Home_TOV_rate"], errors="coerce"),
+        }
+    )
+    away_rows = pd.DataFrame(
+        {
+            "gameDate": history_df["gameDate"],
+            "season": history_df["season"],
+            "team": history_df["AwayTeam"],
+            "teamId": history_df["AwayTeamId"],
+            "is_home": 0.0,
+            "margin": -margin,
+            "win": (margin < 0).astype(float),
+            "pts_for": pd.to_numeric(history_df["AwayPTS"], errors="coerce"),
+            "pts_against": pd.to_numeric(history_df["HomePTS"], errors="coerce"),
+            "poss": pd.to_numeric(history_df["Away_poss"], errors="coerce"),
+            "ts": pd.to_numeric(history_df["Away_TS"], errors="coerce"),
+            "three_pa_rate": pd.to_numeric(history_df["Away_3PA_rate"], errors="coerce"),
+            "tov_rate": pd.to_numeric(history_df["Away_TOV_rate"], errors="coerce"),
+        }
+    )
+
+    history = pd.concat([home_rows, away_rows], ignore_index=True)
+    return history.sort_values(["teamId", "gameDate", "is_home"]).reset_index(drop=True)
+
+
+spread_team_history = build_spread_team_history(spread_history)
+spread_team_history_by_id = {
+    team_id: group.reset_index(drop=True)
+    for team_id, group in spread_team_history.groupby("teamId", sort=False)
+}
+
+team_id_by_short = (
+    pd.concat(
+        [
+            spread_history[["HomeTeam", "HomeTeamId"]].rename(columns={"HomeTeam": "team", "HomeTeamId": "teamId"}),
+            spread_history[["AwayTeam", "AwayTeamId"]].rename(columns={"AwayTeam": "team", "AwayTeamId": "teamId"}),
+        ],
+        ignore_index=True,
+    )
+    .drop_duplicates(subset=["team"])
+    .set_index("team")["teamId"]
+    .to_dict()
+)
+
+schedule_df = pd.read_csv(SCHEDULE_CSV, low_memory=False)
+schedule_df = schedule_df[schedule_df["gameId"].astype(str).str.startswith("225")].copy()
+schedule_df["gameDate"] = pd.to_datetime(schedule_df["gameDateTimeEst"], errors="coerce")
+schedule_df["gameDayDate"] = schedule_df["gameDate"].dt.normalize()
+schedule_df["homeTeamId"] = pd.to_numeric(schedule_df["homeTeamId"], errors="coerce")
+schedule_df["awayTeamId"] = pd.to_numeric(schedule_df["awayTeamId"], errors="coerce")
+
+team_schedule_dates = (
+    pd.concat(
+        [
+            schedule_df[["gameDate", "homeTeamId"]].rename(columns={"homeTeamId": "teamId"}),
+            schedule_df[["gameDate", "awayTeamId"]].rename(columns={"awayTeamId": "teamId"}),
+        ],
+        ignore_index=True,
+    )
+    .dropna(subset=["teamId", "gameDate"])
+    .sort_values(["teamId", "gameDate"])
+    .groupby("teamId", sort=False)["gameDate"]
+    .apply(lambda series: list(series))
+    .to_dict()
+)
+
+
+def get_prediction_game_datetime(game_row, home_team_id, away_team_id):
+    matches = schedule_df[
+        (schedule_df["homeTeamId"] == home_team_id)
+        & (schedule_df["awayTeamId"] == away_team_id)
+        & (schedule_df["gameDayDate"] == game_row["PredDate"].normalize())
+    ]
+    if matches.empty:
+        return game_row["PredDate"]
+    return matches.sort_values("gameDate").iloc[0]["gameDate"]
+
+
+def get_team_history(team_id, game_date, season=None):
+    history = spread_team_history_by_id.get(team_id)
+    if history is None:
+        return pd.DataFrame()
+    past = history[history["gameDate"] < game_date]
+    if season is not None:
+        past = past[past["season"] == season]
+    return past
+
+
+def rolling_team_value(team_id, game_date, column, window):
+    past = get_team_history(team_id, game_date)
+    if len(past) < 3:
+        return np.nan
+    return past[column].tail(window).mean()
+
+
+def season_team_values(team_id, game_date):
+    season = spread_season_key(game_date)
+    past = get_team_history(team_id, game_date, season=season)
+    if past.empty:
+        return {
+            "winpct": np.nan,
+            "home_split_margin": np.nan,
+            "road_split_margin": np.nan,
+            "net_rating": np.nan,
+            "def_rating": np.nan,
+        }
+
+    rating_rows = past[["pts_for", "pts_against", "poss"]].dropna()
+    poss_sum = rating_rows["poss"].sum()
+    if poss_sum > 0:
+        net_rating = 100.0 * (rating_rows["pts_for"].sum() - rating_rows["pts_against"].sum()) / poss_sum
+        def_rating = 100.0 * rating_rows["pts_against"].sum() / poss_sum
+    else:
+        net_rating = np.nan
+        def_rating = np.nan
+
+    return {
+        "winpct": past["win"].mean(),
+        "home_split_margin": past.loc[past["is_home"] == 1.0, "margin"].mean(),
+        "road_split_margin": past.loc[past["is_home"] == 0.0, "margin"].mean(),
+        "net_rating": net_rating,
+        "def_rating": def_rating,
+    }
+
+
+def rest_and_b2b(team_id, game_date):
+    schedule_dates = team_schedule_dates.get(team_id, [])
+    prior_dates = [dt for dt in schedule_dates if dt < game_date]
+    if not prior_dates:
+        return np.nan, 0
+
+    last_game = max(prior_dates)
+    rest_days = max((game_date.normalize() - last_game.normalize()).days - 1, 0)
+    return min(rest_days, 4), int(rest_days == 0)
+
+
+def h2h_margin_for_home(home_team_id, away_team_id, game_date):
+    pair_games = spread_history[
+        (
+            ((spread_history["HomeTeamId"] == home_team_id) & (spread_history["AwayTeamId"] == away_team_id))
+            | ((spread_history["HomeTeamId"] == away_team_id) & (spread_history["AwayTeamId"] == home_team_id))
+        )
+        & (spread_history["gameDate"] < game_date)
+    ].sort_values("gameDate")
+    if pair_games.empty:
+        return np.nan
+
+    spreads = pd.to_numeric(pair_games.tail(5)["Spread"], errors="coerce")
+    oriented = np.where(pair_games.tail(5)["HomeTeamId"] == home_team_id, spreads, -spreads)
+    return np.nanmean(oriented)
+
+
+def get_spread_features_for_game(game_row):
+    home_team = game_row["HomeShort"]
+    away_team = game_row["AwayShort"]
+    home_team_id = team_id_by_short.get(home_team)
+    away_team_id = team_id_by_short.get(away_team)
+
+    if pd.isna(home_team_id) or pd.isna(away_team_id):
+        raise ValueError(f"Could not map team IDs for {home_team} vs {away_team}.")
+
+    game_date = get_prediction_game_datetime(game_row, home_team_id, away_team_id)
+
+    home_season = season_team_values(home_team_id, game_date)
+    away_season = season_team_values(away_team_id, game_date)
+    home_rest_days_capped, home_b2b = rest_and_b2b(home_team_id, game_date)
+    away_rest_days_capped, away_b2b = rest_and_b2b(away_team_id, game_date)
+
+    feature_row = pd.DataFrame(
+        [
+            {
+                "home_indicator": 1.0,
+                "diff_last10_margin": rolling_team_value(home_team_id, game_date, "margin", 10)
+                - rolling_team_value(away_team_id, game_date, "margin", 10),
+                "netrating_diff": home_season["net_rating"] - away_season["net_rating"],
+                "split_margin_diff_calc": home_season["home_split_margin"] - away_season["road_split_margin"],
+                "away_rest_days_capped": away_rest_days_capped,
+                "home_rest_days_capped": home_rest_days_capped,
+                "diff_roll20_tov_rate": rolling_team_value(home_team_id, game_date, "tov_rate", 20)
+                - rolling_team_value(away_team_id, game_date, "tov_rate", 20),
+                "Home_b2b": home_b2b,
+                "defRating_diff": home_season["def_rating"] - away_season["def_rating"],
+                "winpct_diff_calc": home_season["winpct"] - away_season["winpct"],
+                "diff_roll20_ts": rolling_team_value(home_team_id, game_date, "ts", 20)
+                - rolling_team_value(away_team_id, game_date, "ts", 20),
+                "diff_roll20_3pa_rate": rolling_team_value(home_team_id, game_date, "three_pa_rate", 20)
+                - rolling_team_value(away_team_id, game_date, "three_pa_rate", 20),
+                "h2h_margin_for_home": h2h_margin_for_home(home_team_id, away_team_id, game_date),
+                "Away_b2b": away_b2b,
+            }
+        ],
+        columns=sm.FEATURES,
+    )
+    return feature_row.fillna(spread_feature_medians).fillna(0.0)
+
+
+print(f"\n  Predicting {len(pred_df_sorted)} games for Spread...")
+spread_preds = []
+
+for _, game in pred_df_sorted.iterrows():
+    feats = get_spread_features_for_game(game)
+    pred_spread = model_spread.predict(feats)[0]
+    spread_preds.append(round(pred_spread, 1))
+
+pred_df_sorted["Spread_pred"] = spread_preds
+pred_df = pred_df.merge(
+    pred_df_sorted[["PredDate", "HomeShort", "AwayShort", "Spread_pred"]],
+    left_on=["PredDate", "HomeShort", "AwayShort"],
+    right_on=["PredDate", "HomeShort", "AwayShort"],
+    how="left",
+)
+pred_df["Spread"] = pred_df["Spread_pred"]
+
+print(
+    f"  Spread predictions: min={pred_df['Spread'].min():.1f}  "
+    f"max={pred_df['Spread'].max():.1f}  mean={pred_df['Spread'].mean():.1f}"
+)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -532,9 +794,11 @@ output_cols = ["Date", "Home", "Away", "Spread", "Total", "OREB"]
 
 # utf-8-sig adds the BOM so Excel detects encoding correctly
 pred_df[output_cols].to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
+pred_df[output_cols].to_csv(PREDICTIONS_CSV, index=False, encoding="utf-8-sig")
 
 print(f"\n{'='*60}")
 print(f"Saved: {OUTPUT_CSV}")
+print(f"Saved: {PREDICTIONS_CSV}")
 print(f"  Rows: {len(pred_df)}")
 print(f"  Total filled:  {pred_df['Total'].notna().sum()}")
 print(f"  Spread filled: {pred_df['Spread'].notna().sum()}")
